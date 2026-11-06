@@ -1,0 +1,24 @@
+---
+description: Mobile-first dan responsif wajib untuk setiap layar baru atau yang diubah
+alwaysApply: true
+---
+
+# Mobile-first, responsif wajib
+
+Setiap halaman harus nyaman di ponsel 360–430px sebelum dipikirkan untuk desktop. Rekruter membuka portofolio dari ponsel.
+
+- **Dasar CSS = ponsel.** Tailwind mobile-first: tulis kelas dasar untuk layar sempit, lalu tambah `sm:` (640px), `md:` (768px), `lg:` (1024px). Jangan menulis desktop dulu lalu menambal dengan `max-*`.
+- **Tanpa geser samping.** `document.documentElement.scrollWidth` tidak boleh melebihi `clientWidth`. Tabel/blok lebar masuk wadah `overflow-x-auto`. Teks panjang dibungkus atau dipotong, bukan mendorong tata letak.
+- **Sentuh.** Target ketuk minimal 44×44px di ponsel (ikon header, chip filter, input, tombol). Di `sm:` boleh lebih rapat. Input minimal `text-base` (16px) di ponsel agar iOS tidak memperbesar halaman.
+- **Navigasi.** Di bawah `md` menu adalah panel yang bisa dibuka/tutup, tombol punya `aria-expanded`/`aria-controls`, dan tombol tema tetap terjangkau. Menyembunyikan fitur di ponsel bukan solusi.
+- **Form dan filter.** Satu kolom di ponsel, dua kolom mulai `sm`. Chip filter boleh membungkus ke beberapa baris, tidak boleh terpotong.
+- **Gambar dan PDF.** Pratinjau gambar memakai rasio tetap (`aspect-*`), bukan tinggi tetap. Tautan PDF tetap bisa diunduh di ponsel.
+- **Uji.** Periksa 390px dan 1280px sebelum selesai: tidak ada geser samping, menu terbuka/tertutup, semua aksi terjangkau.
+
+```tsx
+// ❌ BAD — desktop dulu
+<div className="grid grid-cols-3 max-sm:grid-cols-1">
+
+// ✅ GOOD — ponsel dulu
+<div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+```

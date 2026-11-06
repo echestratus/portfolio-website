@@ -1,0 +1,16 @@
+# Normalize text files to LF in the repository so hooks and builds behave the
+# same on Windows and Linux.
+* text=auto eol=lf
+
+*.sh text eol=lf
+*.mjs text eol=lf
+
+# Binary assets
+*.pdf binary
+*.png binary
+*.webp binary
+*.jpg binary
+*.jpeg binary
+*.ico binary
+*.woff binary
+*.woff2 binary

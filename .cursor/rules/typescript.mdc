@@ -1,0 +1,25 @@
+---
+description: TypeScript ketat, tipe konten di src/data, komponen tidak menyimpan fakta proyek
+globs: "**/*.{ts,tsx}"
+alwaysApply: false
+---
+
+# TypeScript
+
+- Strict (`tsconfig.json` sudah `strict: true`). Jangan `any` tanpa alasan tertulis. Jangan cast `as never` untuk menutupi error tipe.
+- Tipe konten di `src/data/project-types.ts`. Semua objek di `src/data/projects.ts` harus memenuhi `Project`; field opsional diisi hanya jika ada bukti.
+- Komponen presentasional menerima `Project` (atau field spesifik), bukan objek literal. Jangan menghitung kategori, filter, atau link di dalam JSX halaman.
+- Static export: tidak ada `async` server component yang membaca request, tidak ada `export const dynamic` selain `"force-static"`, tidak ada `generateMetadata` yang melakukan fetch runtime.
+- `"use client"` hanya untuk state/efek/DOM. Jangan `useEffect` yang `setState` sinkron di badan efek (ditolak `react-hooks/set-state-in-effect`); turunkan nilai atau pakai CSS/DOM.
+- Ikuti pola `next/link` dengan `prefetch={false}` untuk build statis; jangan menambah navigasi client yang butuh RSC payload dinamis.
+- Gambar: `next/image` dengan `unoptimized` (sudah global), ukuran sumber sudah dioptimasi, `alt` deskriptif.
+
+```tsx
+// ❌ BAD — fakta proyek di komponen
+<h3>Job Talentio</h3>
+
+// ✅ GOOD
+export function ProjectCard({ project }: { project: Project }) {
+  return <h3>{project.title}</h3>;
+}
+```

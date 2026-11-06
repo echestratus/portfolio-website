@@ -1,0 +1,31 @@
+{
+  "name": "farhan-nur-hakim-portfolio",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Professional software engineering portfolio of Farhan Nur Hakim. Static site, deployable on Cloudflare Pages free tier.",
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "preview": "npx serve out",
+    "lint": "eslint src",
+    "typecheck": "tsc --noEmit",
+    "verify": "npm run lint && npm run typecheck && npm run build",
+    "prepare": "node scripts/install-hooks.mjs"
+  },
+  "dependencies": {
+    "lucide-react": "^1.70.0",
+    "next": "16.4.5",
+    "react": "^19.2.0",
+    "react-dom": "^19.2.0"
+  },
+  "devDependencies": {
+    "@tailwindcss/postcss": "^4.3.4",
+    "@types/node": "^22.15.0",
+    "@types/react": "^19.2.0",
+    "@types/react-dom": "^19.2.0",
+    "eslint": "^9.30.0",
+    "eslint-config-next": "16.4.5",
+    "tailwindcss": "^4.3.4",
+    "typescript": "^5.9.0"
+  }
+}

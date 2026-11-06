@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="FH monogram">
+  <rect width="64" height="64" rx="14" fill="#08090b"/>
+  <rect x="0.75" y="0.75" width="62.5" height="62.5" rx="13.25" fill="none" stroke="#22d3ee" stroke-opacity="0.45" stroke-width="1.5"/>
+  <path d="M20 46V18h20v5.5H26.4v6.2h12.2v5.4H26.4V46H20z" fill="#e9ecef"/>
+  <path d="M42.5 18H48v11h.2l8.1-11H63l-9.3 12.3L63.3 46h-7.2l-8-11.8h-.4V46H42.5V18z" fill="#22d3ee"/>
+</svg>

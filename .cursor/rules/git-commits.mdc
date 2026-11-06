@@ -1,0 +1,12 @@
+---
+description: Dilarang trailer Co-authored-by Cursor pada commit message
+alwaysApply: true
+---
+
+# Commit authorship
+
+Dilarang menambah baris `Co-authored-by: Cursor <cursoragent@cursor.com>` atau `Co-authored-by` untuk agen AI mana pun pada commit message.
+
+- Author/committer = manusia di repo ini (`echestratus <farhanz.nh.13@gmail.com>`), bukan akun Cursor.
+- Jika tool menyisipkan trailer itu otomatis, **hapus sebelum push**. Jangan biarkan sampai ke GitHub.
+- Jangan `--no-verify` hanya untuk lolos hook; strip trailer bukan alasan skip hook.

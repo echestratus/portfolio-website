@@ -1,0 +1,16 @@
+---
+description: Prioritas engineering — correctness, security, bukti, tanpa kompleksitas berlebih
+alwaysApply: true
+---
+
+# Engineering practice
+
+Prioritas: correctness → security → integritas data → kesederhanaan → maintainability → reliability → performance → DX.
+
+- Solusi paling sederhana yang memenuhi syarat. Jangan kompleksitas tanpa alasan (state global, abstraksi, library baru).
+- Sebelum ubah signifikan: pahami implementasi, dependensi, modul terdampak, regresi, data flow, konvensi. Jangan rewrite bagian yang sudah benar.
+- Debug berbasis bukti: gejala → repro → log → jejak eksekusi → hipotesis → uji → root cause → fix terkecil → verifikasi → regresi. Jangan ubah acak.
+- Kode: jelas, konsisten, aman default, mudah di-debug. Hindari abstraksi prematur, hidden side effect, duplikasi, secret hardcoded, error diam, refactor tak terkait, dependensi tanpa justifikasi.
+- Arsitektur mengikuti constraint nyata: static export, free tier Cloudflare, tanpa backend. Jangan pilih yang lebih modern hanya karena baru.
+- Jangan mengarang info hilang. Jika krusial, sebut apa yang kurang. Jika lanjut, nyatakan asumsi (`[Likely] …`).
+- Klaim konten menang atas keinginan tampilan: jika data tidak mendukung tombol/link/metric, tombol itu tidak dirender — bukan direkayasa agar terlihat ada.

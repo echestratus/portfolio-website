@@ -1,0 +1,39 @@
+# dependencies
+node_modules/
+.pnp
+.pnp.*
+
+# next.js
+.next/
+out/
+next-env.d.ts
+*.tsbuildinfo
+
+# production
+build/
+dist/
+
+# local env files
+.env
+.env*.local
+.env.production
+.env.staging
+.dev.vars
+
+# source document (the published copy lives in public/)
+Farhan_Nur_Hakim_Portfolio_Summary.pdf
+
+# audit / scratch (not part of the site)
+.audit/
+.pdf-text.txt
+*.log
+
+# editor and OS
+.vscode/*
+!.vscode/extensions.json
+.idea/
+.DS_Store
+Thumbs.db
+
+# cloudflare
+.wrangler/

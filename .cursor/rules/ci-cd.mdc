@@ -1,0 +1,32 @@
+---
+description: Tanpa GitHub Actions — gate verify lokal, build & deploy oleh Cloudflare Pages
+alwaysApply: true
+---
+
+# CI/CD tanpa GitHub Actions
+
+Actions GitHub berbayar/terbatas. **Jangan menambah workflow di `.github/workflows`.** Pipeline adalah Cloudflare Pages Git integration.
+
+## Gate verifikasi
+
+- Sebelum push: `npm run verify` (lint, typecheck, build). `npm ci` memasang hook `pre-push` lewat `scripts/install-hooks.mjs`.
+- `PORTFOLIO_SKIP_VERIFY=1` hanya untuk darurat yang disetujui pemilik. Jangan dipakai untuk mempercepat diri sendiri.
+- Build yang sama berjalan di Cloudflare Pages. Build gagal = deploy tidak menggantikan versi yang live.
+- Hook tidak dipasang saat build Cloudflare (`CF_PAGES`/`CI` terdeteksi), jadi tidak ada risiko rekursi.
+
+## Deploy
+
+- Push ke `main` → build production. Push ke branch lain → preview deployment (`*.pages.dev`).
+- Build command `npm run build`, output `out`. Jangan ubah ke SSR/OpenNext: itu menambah Worker, kuota request, dan biaya.
+- Jangan `wrangler pages deploy` ke project production tanpa persetujuan pemilik. Untuk uji lokal pakai `wrangler pages dev out`.
+- Jangan poll status build Cloudflare, jangan `gh run watch` (tidak ada run). Satu cek setelah merge cukup.
+
+## Batas free plan
+
+- 500 build Git per bulan; preview build ikut terhitung. Jangan push commit kosong berulang.
+- 20.000 file, 25 MiB per file. Cek `npm run build` sebelum push jika menambah aset.
+
+## Keamanan
+
+- Jangan commit `.env`, token, atau kredensial Cloudflare. Variabel production hanya di dashboard Pages.
+- `NEXT_PUBLIC_*` bersifat publik — hanya untuk origin situs, bukan rahasia.

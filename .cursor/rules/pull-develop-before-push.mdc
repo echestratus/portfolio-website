@@ -1,0 +1,15 @@
+---
+description: Sebelum push, gabungkan origin/develop dan selesaikan setiap konflik
+alwaysApply: true
+---
+
+# Pull develop sebelum push
+
+Sebelum `git push` apa pun, gabungkan `develop` terbaru ke branch kerja. Jangan push bila masih ada konflik.
+
+1. `git fetch origin develop`
+2. `git merge origin/develop`
+3. Jika ada konflik, selesaikan setiap berkas, hapus penanda `<<<<<<<`, commit hasil merge, lalu baru push.
+4. Push memakai nama branch eksplisit: `git push -u origin HEAD:<nama-branch>`. Jangan `git push` saat upstream masih `origin/develop` atau `origin/main`.
+
+Jangan `--force` ke `develop` atau `main`. Jangan push branch yang `git status` masih menandai unmerged.

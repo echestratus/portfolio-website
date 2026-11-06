@@ -1,0 +1,34 @@
+---
+description: Integritas konten — hanya klaim dan link yang terbukti, tanpa fabrikasi
+alwaysApply: true
+---
+
+# Domain konten
+
+Portofolio ini menjual kredibilitas. Satu klaim palsu merusak seluruh situs.
+
+## Level bukti (internal, jangan dicetak sebagai skor)
+
+1. Deployment publik dan/atau repository publik.
+2. Source code lokal + capture UI nyata atau konfigurasi deploy.
+3. Hanya PDF portofolio / dokumen spesifikasi.
+4. Klaim tanpa dukungan — **tidak boleh terbit**.
+
+## Aturan keras
+
+- Link `github`/`liveDemo` hanya dirender jika URL sudah diverifikasi (HTTP 200) saat audit. Jangan menambah tebakan URL.
+- Repository privat tidak ditautkan. Sistem internal tidak diberi URL deployment. Dilarang menampilkan IP, host staging privat, atau nama staf.
+- Dilarang: testimoni, logo klien fiktif, metrik pengguna/revenue, persentase skill, "digunakan oleh ribuan", atau status deploy yang tidak terverifikasi.
+- Kontribusi orang lain tidak boleh diklaim. Jika Git history tidak mendukung, tulis "team project" / "individual contribution not documented" — atau keluarkan proyeknya.
+- Screenshot hanya dari capture nyata, gambar di PDF portofolio, atau build lokal yang dijalankan. Wireframe/mockup tidak boleh dipresentasikan sebagai tangkapan aplikasi.
+- Field opsional (`problem`, `solution`, `architecture`, `contributions`, `status`) diisi hanya jika ada sumber. Kosongkan, jangan karang.
+- Setiap perubahan klaim wajib disertai update `docs/content-verification.md` dan `docs/project-evidence-report.md`.
+
+```ts
+// ❌ BAD
+links: { github: "https://github.com/me/vilert" } // tidak ada
+
+// ✅ GOOD
+links: {},
+confidentiality: "review_required",
+```

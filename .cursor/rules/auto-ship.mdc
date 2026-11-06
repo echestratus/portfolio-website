@@ -1,0 +1,23 @@
+---
+description: Setelah tugas selesai, commit dan buka PR ke develop. Merge dikerjakan manusia.
+alwaysApply: true
+---
+
+# Rilis otomatis (berdiri, jangan tanya)
+
+Izin tetap dari pemilik. **Jangan** menanyakan "mau commit / buka PR?". **Jangan** menggabungkan PR. Merge, termasuk `develop` ke `main`, dikerjakan manusia supaya bisa dicek dulu.
+
+Setelah `npm run lint`, `npm run typecheck`, `npm run build` hijau:
+
+1. **Commit** di branch `feat/` atau `fix/` yang dibuat dari `develop`, Conventional Commits, tanpa `.env`/token/aset besar tak terpakai, tanpa trailer `Co-authored-by` agen.
+2. **Sebelum push:** `git fetch origin develop` lalu `git merge origin/develop`. Selesaikan konflik sampai tidak ada berkas unmerged. Baru `git push -u origin HEAD:<nama-branch>`.
+3. **PR ke `develop`** (`gh pr create --base develop`). Beri URL-nya, lalu berhenti.
+4. **Jangan** menunggu build Cloudflare, jangan polling `*.pages.dev`, jangan merge.
+
+Setelah manusia menggabungkan PR ke `develop`, branch `develop` menjadi preview deployment hasil review. Setelah manusia menggabungkan `develop` ke `main` (jangan hapus `develop`), push ke `main` memicu build production di Cloudflare Pages. Jangan merge `develop` → `main` sendiri.
+
+Jangan deploy production dari branch fitur. Jangan ship jika tidak ada perubahan, diff berisi secret/URL internal, atau ada klaim konten yang tidak terbukti. Jangan menghapus PDF publik atau `_headers` tanpa alasan.
+
+## Bootstrap (sekali saja)
+
+Saat repository masih kosong dan `develop` belum ada, commit awal dan push `develop` + `main` dari commit yang sama adalah pengecualian yang sah; setelah itu semua perubahan lewat PR.

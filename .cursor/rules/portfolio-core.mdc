@@ -1,0 +1,15 @@
+---
+description: Aturan inti portfolio — situs statis, sumber konten tunggal, proyek asli read-only
+alwaysApply: true
+---
+
+# Portfolio — cara kerja agen
+
+- Baca `README.md`, `docs/website-architecture.md`, lalu `docs/deployment-guide.md` sebelum koding.
+- Situs ini **static export** (`output: "export"`). Jangan menambah route handler, server action, middleware, `cookies()`, `headers()`, ISR, atau apa pun yang butuh runtime server — semuanya akan gagal build.
+- Tidak ada database, API, auth, atau analytics. Data dinamis hanya lewat JSON/TS statis dan komponen client.
+- Konten proyek hanya di `src/data/projects.ts` (tipe di `src/data/project-types.ts`). Profil di `src/data/profile.ts`, identitas di `src/data/site.ts`. **Komponen tidak boleh hardcode fakta proyek.**
+- Direktori proyek asli (`C:\Users\Hakim\Documents\Freelance\*` selain folder ini) **read-only**. Jangan commit, salin utuh, atau ubah isinya.
+- Deploy: Cloudflare Pages. `main` = production, branch lain = preview. Tanpa Functions, tanpa Worker, tanpa `_redirects` yang tidak perlu.
+- Batas Pages: 20.000 file per deploy, 25 MiB per file. Jangan menambah dependensi besar atau aset tanpa kompresi.
+- PDF asli di root tidak diubah. Yang dipublikasikan hanya salinan di `public/farhan-nur-hakim-portfolio.pdf`.

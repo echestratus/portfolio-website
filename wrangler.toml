@@ -1,0 +1,5 @@
+# Cloudflare Pages configuration (optional but useful for direct uploads).
+# The Git integration only needs the build command and output directory below.
+name = "farhan-nur-hakim"
+compatibility_date = "2026-01-01"
+pages_build_output_dir = "out"
