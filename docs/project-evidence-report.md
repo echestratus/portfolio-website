@@ -14,16 +14,16 @@ The website never prints these numbers. It states the evidence in plain language
 
 | Project | Level | Public deployment | Public repo | Visual evidence | Notes |
 |---|---|---|---|---|---|
-| Job Talentio | 1 | https://jobtalent.io | Yes | 4 product screens from the PDF | Live MVP; 170 commits by Farhan |
+| Job Talentio | 1 | https://jobtalent.io | Yes | 6 captures from the staging build | 252 published vacancies at capture time |
 | 7Oz Espresso | 1 | https://7oz-espresso.com | Yes | Live homepage capture | Staff dashboard is private |
 | Cari Kerja | 2 | Staging only (not linked) | Yes, 3 repos | 4 captures from the local staging build | Production URL not confirmed |
-| Hadith Hotel HMS | 2 | Internal production sign-in only | No | Sign-in screen capture | Operational screens require staff login |
-| EGI Optik IMS | 2 | Internal production sign-in only | No | Sign-in screen capture | Operational screens require staff login |
+| Hadith Hotel HMS | 1 | Internal production + staging | No | 6 captures from staging, PII and amounts masked | Repository private; walkthrough on request |
+| EGI Optik IMS | 2 | Internal production | No | 3 captures from production | Limited live data set; repository private |
 | EGI Resources Holding | 1 | https://egiresources.com | No | Live homepage capture | Private repository |
 | Saji Nusantara | 2 | https://saji-nusantara.com | No | Live homepage capture | Pre-launch checklist still open |
 | Humble 8 | 1 | https://humble8.com | No | Live homepage capture | Private repository |
 | EGI Optics | 1 | https://egi-optics.com | Yes | Live homepage capture | Contribution limited to theme QA and content |
-| VILERT | 2 | None | No | 4 specification visuals | Team prototype; dashboard + MQTT/alerting backend exist, CSV export and three-role RBAC do not |
+| VILERT | 2 | None | No | 4 specification visuals | Team prototype; CSV export and three-role RBAC unimplemented |
 | Smart Camera Lobster | 3 | None | No | 3 PDF visuals | Team final project, 2023; individual contribution undocumented |
 | HerbCam | 3 | None | No | 3 PDF visuals | Source not in workspace |
 | TenunSantara | 3 | None | No | 3 PDF visuals | Source not in workspace |
@@ -45,12 +45,27 @@ The website never prints these numbers. It states the evidence in plain language
 
 ## Screenshot provenance
 
-- **Live captures** (`egi-resources`, `egi-optics`, `7oz-cafe`, `humble8`, `saji-nusantara`, `hadith-hms`, `egi-ims`) were captured with headless Chrome on 6 November 2026 from the public URLs listed above.
-- **Portfolio PDF images** (`job-talentio`, `drite-attire`, `peworld`, `blanja`, `mama-recipe`, `herbcam`, `tenunsantara`, `lobster-monitoring`, `vilert`) were extracted from `Farhan_Nur_Hakim_Portfolio_Summary.pdf`, image by image, then converted to WebP. Their captions state that they come from the portfolio or specification document.
+- **Live captures** (`egi-resources`, `egi-optics`, `7oz-cafe`, `humble8`, `saji-nusantara`) were captured with headless Chrome in November 2026 from the public URLs listed above.
+- **Job Talentio** (`job-talentio/`) — six captures from `staging.jobtalent.io/en` in November 2026: homepage, job search, job detail, employer landing, company directory, and registration. These replace the older PDF screenshots.
+- **Hadith Hotel HMS** (`hadith-hms/`) — six captures from the staging deployment (`stage-hms.egiresources.com`) using a temporary OWNER account that was created for the capture and deleted immediately afterwards: rooms, housekeeping, reservations, warehouse, purchasing, and assets.
+- **EGI Optik IMS** (`egi-ims/`) — three captures from the production deployment using a temporary admin account that was created for the capture and deleted immediately afterwards: scan workstation, barcode labels, and sign-in.
+- **Portfolio PDF images** (`drite-attire`, `peworld`, `blanja`, `mama-recipe`, `herbcam`, `tenunsantara`, `lobster-monitoring`, `vilert`) were extracted from `Farhan_Nur_Hakim_Portfolio_Summary.pdf`, image by image, then converted to WebP. Their captions state that they come from the portfolio or specification document.
 - **Wireframes were rejected:** `dev-battalion/Spesifikasi Dashboard (1).docx` contains 16 embedded images, but they are placeholder wireframes (grey boxes, empty states) rather than runtime captures, so none were used.
 - **Cari Kerja captures** come from `job-portal/cari-kerja-frontend/.tmp-shots/`, which contains real staging-build screenshots.
 - No image was generated, mocked up, or edited to hide missing functionality. No stock photography is presented as a product screenshot.
-- All images were resized to a maximum of 1800 px wide and converted to WebP (quality 82). The total image payload is under 3 MB.
+- All images were resized to a maximum of 1800 px wide and converted to WebP (quality 82).
+
+## Data protection during capture
+
+Screenshots of client systems were taken on staging or with a purpose-built read-only review account, and reviewed before publication.
+
+| Risk | Handling |
+|---|---|
+| Guest names, email addresses, phone numbers | Blurred in the reservation screenshot |
+| Monetary amounts, supplier pricing | Blurred in purchasing and inventory views |
+| Passport / identity numbers | Pages showing them (front office, guest detail) were not captured |
+| Revenue reports | Report and folio screens were not published |
+| Account lifecycle | Temporary accounts were deleted from the database after capture; verified zero rows remaining |
 
 ## Claims that were removed or narrowed
 

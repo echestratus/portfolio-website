@@ -25,6 +25,7 @@ Farhan_Nur_Hakim_Portfolio_Summary.pdf
 
 # audit / scratch (not part of the site)
 .audit/
+.capture/
 .pdf-text.txt
 *.log
 
