@@ -57,7 +57,7 @@ export const employment = [
   {
     company: "PT EGI Resources",
     role: "Full Stack Web Developer",
-    period: "Nov 2024 – Feb 2026",
+    period: "Nov 2024 – Present",
     location: "Indonesia · Uzbekistan operations",
     summary:
       "Built and maintained the group's web estate: the corporate holding site, a defence-optics subsidiary site, three hospitality brand sites, a cafe platform, and internal operational systems for a hotel and an optics inventory division.",

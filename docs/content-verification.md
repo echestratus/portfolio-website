@@ -139,7 +139,7 @@ Company attribution for each project comes from the author's brief and is stored
 | Freelance | Dev Battalion (VILERT), Drite Attire |
 | Bootcamp and university | HerbCam, TenunSantara, Peworld, Blanja, Mama Recipe |
 
-The CV states the EGI Resources role as November 2024 – February 2026 and does not include dates for the group-wide infrastructure engagement; the site therefore dates that work by year only.
+The CV states the EGI Resources role as November 2024 – February 2026; the author confirmed the role is ongoing, so the site and both documents use "Nov 2024 – Present". The CV does not include dates for the group-wide infrastructure engagement, so that work is dated by year only.
 
 ## Documents
 
