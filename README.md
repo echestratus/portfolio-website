@@ -2,6 +2,8 @@
 
 A static portfolio website for fullstack, backend, and software-engineering work. Built with Next.js 16, React 19, TypeScript, and Tailwind CSS 4, exported as static HTML and deployable on **Cloudflare Pages for free**.
 
+Repository: [echestratus/portfolio-website](https://github.com/echestratus/portfolio-website)
+
 ## Quick start
 
 ```bash
