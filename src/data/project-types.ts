@@ -40,6 +40,7 @@ export interface Project {
   status?: ProjectStatus;
   year?: string;
   role?: string;
+  organization?: string;
   evidence: {
     level: EvidenceLevel;
     screenshots: ProjectImage[];

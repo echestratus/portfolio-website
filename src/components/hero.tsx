@@ -63,7 +63,14 @@ export function Hero() {
                 className="inline-flex h-11 items-center gap-2 rounded-full border border-line-strong bg-surface px-5 text-sm font-medium transition-colors hover:border-accent/50"
               >
                 <Download className="h-4 w-4" aria-hidden="true" />
-                Download portfolio PDF
+                Download resume
+              </a>
+              <a
+                href={siteConfig.portfolioFile}
+                download={siteConfig.portfolioFileName}
+                className="inline-flex h-11 items-center gap-1.5 rounded-full px-2 text-sm font-medium text-muted underline decoration-line-strong decoration-1 underline-offset-4 transition-colors hover:text-fg hover:decoration-accent/60"
+              >
+                Portfolio PDF
               </a>
             </div>
 
@@ -102,6 +109,10 @@ export function Hero() {
                   <p>
                     <span className="text-muted">name</span>{" "}
                     <span className="text-fg">“Farhan Nur Hakim”</span>
+                  </p>
+                  <p>
+                    <span className="text-muted">alias</span>{" "}
+                    <span className="text-fg">“{siteConfig.nickname}”</span>
                   </p>
                   <p>
                     <span className="text-muted">role</span>{" "}

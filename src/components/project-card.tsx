@@ -79,6 +79,9 @@ export function ProjectCard({
               <h3 className="mt-2.5 text-lg font-semibold tracking-[-0.01em] sm:text-xl">
                 {project.title}
               </h3>
+              {project.organization && (
+                <p className="mt-1.5 text-[11px] leading-snug text-muted">{project.organization}</p>
+              )}
             </div>
             <ArrowUpRight
               aria-hidden="true"

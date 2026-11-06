@@ -69,7 +69,17 @@ export function SiteFooter() {
                     download={siteConfig.resumeFileName}
                     className="inline-flex min-h-11 items-center gap-1 text-muted transition-colors hover:text-fg sm:min-h-0"
                   >
-                    Portfolio PDF
+                    Resume (PDF)
+                    <ArrowUpRight className="h-3.5 w-3.5" aria-hidden="true" />
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href={siteConfig.portfolioFile}
+                    download={siteConfig.portfolioFileName}
+                    className="inline-flex min-h-11 items-center gap-1 text-muted transition-colors hover:text-fg sm:min-h-0"
+                  >
+                    Portfolio (PDF)
                     <ArrowUpRight className="h-3.5 w-3.5" aria-hidden="true" />
                   </a>
                 </li>

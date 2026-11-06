@@ -79,6 +79,7 @@ export const projects: Project[] = [
     status: "Live",
     year: "2026",
     role: "Fullstack developer — web, API, and admin",
+    organization: "PT EGI Resources — IT project",
     evidence: {
       level: 1,
       screenshots: [
@@ -113,11 +114,11 @@ export const projects: Project[] = [
           caption: "Candidate registration",
         },
       ],
-      note: "Public deployment at jobtalent.io, with a staging environment at staging.jobtalent.io. Screenshots were captured from the staging build in November 2026 against 252 published vacancies.",
+      note: "Publicly accessible staging deployment at staging.jobtalent.io, which is the environment currently exposed for the platform. It carries 252 published vacancies across hospitality, IT, sales, and finance categories. The repository is public.",
     },
     links: {
       github: "https://github.com/EGI-HOLDING/job-talentio",
-      liveDemo: "https://jobtalent.io",
+      liveDemo: "https://staging.jobtalent.io",
     },
     confidentiality: "public",
     featured: true,
@@ -196,6 +197,7 @@ export const projects: Project[] = [
     status: "Live",
     year: "2026",
     role: "Fullstack developer",
+    organization: "PT EGI Resources — Hadith Hotel Samarkand",
     evidence: {
       level: 1,
       screenshots: [
@@ -310,6 +312,7 @@ export const projects: Project[] = [
     status: "Live",
     year: "2026",
     role: "Fullstack developer",
+    organization: "PT EGI Resources — F&B division",
     evidence: {
       level: 1,
       screenshots: [
@@ -404,6 +407,7 @@ export const projects: Project[] = [
     status: "In development",
     year: "2026",
     role: "Fullstack contributor — API, web app, and admin console",
+    organization: "PT EGI Resources — IT project",
     evidence: {
       level: 2,
       screenshots: [
@@ -521,6 +525,7 @@ export const projects: Project[] = [
     status: "Live",
     year: "2026",
     role: "Fullstack developer",
+    organization: "PT EGI Resources — EGI Optik Indonesia",
     evidence: {
       level: 2,
       screenshots: [
@@ -604,6 +609,7 @@ export const projects: Project[] = [
     status: "Live",
     year: "2026",
     role: "Contributor — content and deployment",
+    organization: "PT EGI Resources — holding company",
     evidence: {
       level: 1,
       screenshots: [
@@ -676,6 +682,7 @@ export const projects: Project[] = [
     status: "In development",
     year: "2026",
     role: "Frontend developer",
+    organization: "PT EGI Resources — F&B division",
     evidence: {
       level: 2,
       screenshots: [
@@ -747,6 +754,7 @@ export const projects: Project[] = [
     status: "Live",
     year: "2026",
     role: "Frontend developer",
+    organization: "PT EGI Resources — Humble 8 Social Space",
     evidence: {
       level: 1,
       screenshots: [
@@ -766,6 +774,97 @@ export const projects: Project[] = [
     cover: {
       src: "/images/projects/humble8/home.webp",
       alt: "Humble 8 venue homepage",
+    },
+  },
+  {
+    id: "hotel-kampoeng-indonesia",
+    slug: "hotel-kampoeng-indonesia",
+    title: "Hotel Kampoeng Indonesia",
+    tagline: "Multilingual booking site for a hotel in Samarkand",
+    shortDescription:
+      "Marketing and booking website for a hotel in Samarkand, with room catalogue, gallery, and an integrated booking engine in four languages.",
+    overview:
+      "The public website for Hotel Kampoeng Indonesia in Samarkand, Uzbekistan. It presents rooms, the gallery, news, and guest reviews in four languages, and hands the reservation flow to an integrated booking engine rather than a custom form.",
+    category: ["Frontend", "Hospitality"],
+    technologies: ["Next.js", "React", "TypeScript", "Tailwind CSS", "next-intl", "Exely"],
+    features: [
+      "Four-language site: English, Russian, Uzbek, and Arabic",
+      "Room catalogue with per-room detail pages",
+      "Gallery and news archive",
+      "Integrated booking engine with availability search",
+      "Contact and review pages",
+      "Visitor analytics with bot filtering and geo resolution",
+      "Docker deployment behind nginx",
+    ],
+    problem:
+      "The hotel sells rooms in a market where guests read Uzbek, Russian, Arabic, and English, and its booking flow depends on an external reservation system that had to feel native to the site.",
+    solution:
+      "A localized Next.js front end with room and gallery content, plus an embedded booking bar and search form that talk to the Exely reservation system. Booking state stays with the provider, so the site never becomes the source of truth for availability.",
+    architecture: {
+      summary:
+        "A single Next.js application with localized routes, a visitor analytics endpoint, and an embedded booking engine.",
+      layers: [
+        {
+          label: "Site",
+          detail: "Next.js App Router with localized routes for rooms, gallery, news, and reviews",
+        },
+        {
+          label: "Booking",
+          detail: "Exely booking bar and search form embedded in the page flow",
+        },
+        {
+          label: "Analytics",
+          detail: "Route handler recording visits with IP geo lookup, bot filtering, and debounce",
+        },
+        {
+          label: "Delivery",
+          detail: "Docker container behind nginx, deployed from CI",
+        },
+      ],
+    },
+    contributions: [
+      "Contributed to the localized site build and its room, gallery, and contact pages.",
+      "Worked on the booking integration points and visitor analytics behaviour.",
+      "Supported containerized deployment on the group's servers.",
+    ],
+    status: "Live",
+    year: "2026",
+    role: "Frontend developer",
+    organization: "PT EGI Resources — Kampoeng Indonesia",
+    evidence: {
+      level: 1,
+      screenshots: [
+        {
+          src: "/images/projects/hotel-kampoeng/home.webp",
+          alt: "Hotel Kampoeng Indonesia homepage",
+          caption: "Homepage on the live deployment",
+        },
+        {
+          src: "/images/projects/hotel-kampoeng/rooms.webp",
+          alt: "Room catalogue page for Hotel Kampoeng Indonesia",
+          caption: "Room catalogue",
+        },
+        {
+          src: "/images/projects/hotel-kampoeng/gallery.webp",
+          alt: "Gallery page for Hotel Kampoeng Indonesia",
+          caption: "Gallery",
+        },
+        {
+          src: "/images/projects/hotel-kampoeng/booking.webp",
+          alt: "Booking page with the integrated reservation engine",
+          caption: "Booking engine",
+        },
+      ],
+      note: "Live at hotel-kampoengindonesia.com. The repository is not public; attribution for this project was confirmed by the author, whose Git history in the repository is not attributable.",
+    },
+    links: {
+      liveDemo: "https://hotel-kampoengindonesia.com",
+    },
+    confidentiality: "public",
+    featured: false,
+    cover: {
+      src: "/images/projects/hotel-kampoeng/home.webp",
+      alt: "Hotel Kampoeng Indonesia homepage",
     },
   },
   {
@@ -821,6 +920,7 @@ export const projects: Project[] = [
     status: "Live",
     year: "2026",
     role: "Theme and content contributor",
+    organization: "PT EGI Resources — EGI Optik Indonesia",
     evidence: {
       level: 1,
       screenshots: [
@@ -913,6 +1013,7 @@ export const projects: Project[] = [
     status: "Prototype",
     year: "2025",
     role: "Frontend and backend contributor — team project",
+    organization: "Freelance engagement",
     evidence: {
       level: 2,
       screenshots: [
@@ -975,6 +1076,7 @@ export const projects: Project[] = [
     status: "Academic project",
     year: "2023",
     role: "Team project contributor",
+    organization: "Aruna Indonesia — R&D contract",
     evidence: {
       level: 3,
       screenshots: [
@@ -1030,6 +1132,7 @@ export const projects: Project[] = [
     ],
     status: "Academic project",
     role: "Android and machine-learning developer",
+    organization: "Telkom University — Bangkit Academy",
     evidence: {
       level: 3,
       screenshots: [
@@ -1085,6 +1188,7 @@ export const projects: Project[] = [
     ],
     status: "Academic project",
     role: "Android and machine-learning developer",
+    organization: "Telkom University — Bangkit Academy",
     evidence: {
       level: 3,
       screenshots: [
@@ -1141,6 +1245,7 @@ export const projects: Project[] = [
     ],
     status: "Client project",
     role: "Freelance web developer",
+    organization: "Freelance client project",
     evidence: {
       level: 3,
       screenshots: [
@@ -1196,6 +1301,7 @@ export const projects: Project[] = [
       "Individual contribution is not itemized in the available materials; the project is documented in the portfolio PDF.",
     ],
     role: "Web application project",
+    organization: "Pijar Camp bootcamp project",
     evidence: {
       level: 3,
       screenshots: [
@@ -1253,6 +1359,7 @@ export const projects: Project[] = [
     ],
     status: "Academic project",
     role: "Frontend developer with backend contributions",
+    organization: "Pijar Camp bootcamp project",
     evidence: {
       level: 3,
       screenshots: [
@@ -1306,6 +1413,7 @@ export const projects: Project[] = [
       "A responsive React/Next.js front end built around the recipe lifecycle: discover, open, save, and publish.",
     contributions: ["Responsible for the front-end implementation, as documented in the portfolio PDF."],
     role: "Frontend developer",
+    organization: "Pijar Camp bootcamp project",
     evidence: {
       level: 3,
       screenshots: [
