@@ -63,19 +63,22 @@ src/
     section-heading.tsx
     theme-toggle.tsx
   data/
-    site.ts               Site identity, contact links, navigation
+    site.ts               Site identity, contact links, navigation, document files
     project-types.ts      Project interface
     projects.ts           The single source of truth for project content
-    profile.ts            About, capabilities, skills, experience, education
+    profile.ts            About, capabilities, skills, employment, infrastructure, education
   lib/
     utils.ts
 public/
   images/projects/...     WebP project screenshots
+  farhan-nur-hakim-resume.pdf
   farhan-nur-hakim-portfolio.pdf
   favicon.svg
   apple-touch-icon.png
   og.png
   _headers                Cloudflare Pages response headers
+documents/                HTML sources for the resume and portfolio PDFs
+scripts/                  build-documents, install-hooks, strip-ai-trailer
 docs/                     Audit, evidence, architecture, verification, deployment
 ```
 
@@ -105,7 +108,7 @@ Key rules enforced by the model:
 - No web font downloads.
 - No third-party scripts, analytics, or embeds.
 - Project images are WebP at ≤1800 px and are lazy-loaded by `next/image` by default (priority only on the hero card and detail cover).
-- Measured export: **183 files, 20.9 MB total including the 14.7 MB PDF**; 6.8 MB excluding the PDF.
+- Measured export: **203 files, 12.3 MB total**, of which 4.3 MB are the two generated PDFs.
 - Static HTML means no server round trip beyond the CDN edge.
 
 ## SEO
@@ -139,5 +142,6 @@ hidden skip link, which expands on focus. No page has horizontal overflow at
 
 - Add a project: append an object to `projects` in `src/data/projects.ts`, add WebP images under `public/images/projects/<slug>/`, rebuild. The sitemap, catalog, filters, and detail page are generated automatically.
 - Change copy: edit the data file, not the components.
-- Update the PDF: replace `public/farhan-nur-hakim-portfolio.pdf` with a sanitized copy and keep the original outside the site.
+- Update the documents: edit `documents/resume.html` or `documents/portfolio.html`, then run `npm run build:documents`. Do not hand-edit the PDFs; they are generated.
+- Change contact details: edit `src/data/site.ts` and mirror the same values in `documents/resume.html` and `documents/portfolio.html`, then rebuild the documents.
 - Change the domain: set `NEXT_PUBLIC_SITE_URL` in the Cloudflare Pages build environment and rebuild.

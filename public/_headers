@@ -14,7 +14,11 @@
 /images/*
   Cache-Control: public, max-age=604800
 
-/*.pdf
+/farhan-nur-hakim-resume.pdf
+  Cache-Control: public, max-age=86400
+  Content-Disposition: inline; filename="Farhan-Nur-Hakim-Resume.pdf"
+
+/farhan-nur-hakim-portfolio.pdf
   Cache-Control: public, max-age=86400
   Content-Disposition: inline; filename="Farhan-Nur-Hakim-Portfolio.pdf"
 

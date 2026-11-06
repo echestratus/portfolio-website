@@ -32,7 +32,7 @@ No source file inside the original project directories was modified, created, or
 
 1. **Uncommitted work was preserved.** `7oz-cafe-website`, `EGI-Resources-Holding`, `inventory-management-system`, and `job-talentio` were not pulled.
 2. **Feature branches were not switched.** Pulling into the current branches would not advance `main`, and switching branches risked disrupting local work.
-3. **`hotel-kampoeng-indonesia` is 16 commits behind.** It was not pulled because the repository is outside the attribution scope of this portfolio (no commits by Farhan Nur Hakim were found in its history) and pulling would modify an original project directory.
+3. **`hotel-kampoeng-indonesia` is 16 commits behind.** It was not pulled, to avoid modifying an original project directory mid-engagement. The project is now published on the author's explicit confirmation of his role, and the project page states that Git history carries no attributable commits.
 4. **`dev-battalion` and `job-portal` are umbrella folders, not Git repositories.** Their contents are separate nested projects or documents.
 5. **Remote freshness is only as good as the fetch.** All reachable remotes were fetched successfully; authentication failures did not occur.
 6. **Audit basis.** The portfolio content was derived from the fetched local state plus the PDF portfolio. It does not claim that any project is on its absolute latest remote commit.

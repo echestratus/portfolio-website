@@ -81,6 +81,8 @@ docs/               audit, evidence, architecture, verification, deployment
 
 ## Notes
 
-- The original portfolio PDF is preserved at the workspace root and is not modified. A separate copy is published at `public/farhan-nur-hakim-portfolio.pdf`.
-- `hotel-kampoeng-indonesia` was inspected but excluded from the public catalog because no attribution to Farhan could be verified. See the audit docs.
-- Internal hotel and inventory systems are described without public deployment links.
+- Two documents are published: an ATS-friendly resume (`public/farhan-nur-hakim-resume.pdf`) and a portfolio deck (`public/farhan-nur-hakim-portfolio.pdf`). Both are generated from the HTML sources in `documents/` with `npm run build:documents`, so the site, the resume, and the deck stay in sync.
+- The original portfolio PDF supplied by the author is preserved at the workspace root and is not modified.
+- `hotel-kampoeng-indonesia` is included on the author's explicit confirmation that it was delivered for EGI Resources' Kampoeng Indonesia property business. Its Git history contains no attributable commits, and the project page says so.
+- Internal hotel and inventory systems are described without public deployment links. Addresses, hostnames, and credentials from the on-premise infrastructure engagement are not published.
+- Employment dates and company names come from the author's CV; project-to-employer mapping comes from the author's brief and is stated per project.

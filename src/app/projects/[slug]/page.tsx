@@ -5,6 +5,7 @@ import { notFound } from "next/navigation";
 import {
   ArrowLeft,
   ArrowUpRight,
+  Building2,
   CalendarDays,
   Check,
   ExternalLink,
@@ -219,6 +220,9 @@ export default async function ProjectPage({ params }: { params: Promise<{ slug: 
               Project facts
             </p>
             <div className="mt-5 space-y-5">
+              {project.organization && (
+                <MetaItem icon={Building2} label="Delivered for" value={project.organization} />
+              )}
               {project.role && <MetaItem icon={UserRound} label="Role" value={project.role} />}
               {project.year && <MetaItem icon={CalendarDays} label="Period" value={project.year} />}
               <MetaItem
@@ -444,6 +448,14 @@ export default async function ProjectPage({ params }: { params: Promise<{ slug: 
                   <div className="flex items-start justify-between gap-4 py-3">
                     <dt className="text-xs text-muted">Role</dt>
                     <dd className="max-w-[60%] text-right text-xs font-medium">{project.role}</dd>
+                  </div>
+                )}
+                {project.organization && (
+                  <div className="flex items-start justify-between gap-4 py-3">
+                    <dt className="text-xs text-muted">Delivered for</dt>
+                    <dd className="max-w-[60%] text-right text-xs font-medium">
+                      {project.organization}
+                    </dd>
                   </div>
                 )}
                 {project.year && (

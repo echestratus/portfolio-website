@@ -4,17 +4,18 @@ import {
   ArrowUpRight,
   Braces,
   Database,
-  Download,
   Layers,
   Mail,
+  Server,
   Sparkles,
 } from "lucide-react";
 import { Hero } from "@/components/hero";
 import { Reveal } from "@/components/reveal";
+import { DownloadButtons } from "@/components/download-buttons";
 import { SectionHeading, Eyebrow } from "@/components/section-heading";
 import { ProjectCard } from "@/components/project-card";
 import { featuredProjects, projects } from "@/data/projects";
-import { about, capabilities, education, experience, principles, skillGroups } from "@/data/profile";
+import { about, capabilities, education, employment, infrastructure, principles, skillGroups } from "@/data/profile";
 import { siteConfig } from "@/data/site";
 
 const capabilityIcons = [Layers, Database, Braces, Sparkles];
@@ -180,32 +181,44 @@ export default function HomePage() {
         </div>
       </section>
 
-      <section className="border-t border-line">
+      <section id="experience" className="scroll-mt-24 border-t border-line">
         <div className="mx-auto max-w-6xl px-5 py-20 sm:px-8 sm:py-24">
           <Reveal>
             <SectionHeading
-              eyebrow="Project experience"
-              title="A record of what was shipped, not a list of job titles."
-              description="Each entry links to the case study for scope, technical detail, and the evidence behind it."
+              eyebrow="Experience"
+              title="Where the work was delivered."
+              description="Every project on this site belongs to one of these engagements. Company names are used because the work was done inside them, not as a list of titles."
             />
           </Reveal>
 
           <ol className="mt-10 border-t border-line">
-            {experience.map((item, index) => (
-              <Reveal key={item.title} delay={index * 40} as="li">
-                <Link
-                  href={item.href}
-                  prefetch={false}
-                  className="group grid gap-3 border-b border-line py-6 transition-colors hover:bg-surface/50 sm:grid-cols-[7rem_1fr_auto] sm:gap-6 sm:px-2"
-                >
+            {employment.map((item, index) => (
+              <Reveal key={item.company} delay={index * 40} as="li">
+                <div className="grid gap-3 border-b border-line py-6 sm:grid-cols-[9rem_1fr] sm:gap-6 sm:px-2">
                   <span className="font-mono text-[11px] uppercase tracking-[0.14em] text-muted sm:pt-1">
                     {item.period}
                   </span>
                   <div>
-                    <h3 className="text-[15px] font-semibold tracking-[-0.01em]">{item.title}</h3>
-                    <p className="mt-1.5 max-w-2xl text-sm leading-relaxed text-muted">
-                      {item.description}
+                    <h3 className="text-[15px] font-semibold tracking-[-0.01em]">
+                      {item.role} · <span className="text-accent">{item.company}</span>
+                    </h3>
+                    <p className="mt-0.5 font-mono text-[10px] uppercase tracking-[0.14em] text-muted">
+                      {item.location}
                     </p>
+                    <p className="mt-2 max-w-2xl text-sm leading-relaxed text-muted">
+                      {item.summary}
+                    </p>
+                    <ul className="mt-3 space-y-1.5">
+                      {item.highlights.map((highlight) => (
+                        <li key={highlight} className="flex gap-2.5 text-sm leading-relaxed">
+                          <span
+                            aria-hidden="true"
+                            className="mt-2 h-1 w-1 shrink-0 rounded-full bg-accent"
+                          />
+                          <span className="text-fg/85">{highlight}</span>
+                        </li>
+                      ))}
+                    </ul>
                     <ul className="mt-3 flex flex-wrap gap-1.5">
                       {item.technologies.map((technology) => (
                         <li
@@ -217,14 +230,57 @@ export default function HomePage() {
                       ))}
                     </ul>
                   </div>
-                  <ArrowUpRight
-                    aria-hidden="true"
-                    className="hidden h-4 w-4 text-muted transition-all group-hover:-translate-y-0.5 group-hover:translate-x-0.5 group-hover:text-accent sm:mt-1 sm:block"
-                  />
-                </Link>
+                </div>
               </Reveal>
             ))}
           </ol>
+        </div>
+      </section>
+
+      <section className="border-t border-line bg-surface/40">
+        <div className="mx-auto max-w-6xl px-5 py-20 sm:px-8 sm:py-24">
+          <Reveal>
+            <SectionHeading
+              eyebrow="Infrastructure"
+              title={infrastructure.title}
+              description={infrastructure.summary}
+            />
+          </Reveal>
+
+          <div className="mt-10 grid gap-px overflow-hidden rounded-xl border border-line bg-line md:grid-cols-2 lg:grid-cols-3">
+            {infrastructure.points.map((point, index) => (
+              <Reveal key={point.title} delay={index * 30} className="bg-bg">
+                <div className="h-full p-6">
+                  <div className="flex items-center gap-2.5">
+                    <span className="flex h-8 w-8 items-center justify-center rounded-lg border border-line bg-surface text-accent">
+                      <Server className="h-4 w-4" aria-hidden="true" />
+                    </span>
+                    <h3 className="text-[14px] font-semibold tracking-[-0.01em]">{point.title}</h3>
+                  </div>
+                  <p className="mt-3 text-sm leading-relaxed text-muted">{point.detail}</p>
+                </div>
+              </Reveal>
+            ))}
+          </div>
+
+          <Reveal delay={60}>
+            <div className="mt-6 flex flex-wrap items-center gap-3">
+              <ul className="flex flex-wrap gap-1.5">
+                {infrastructure.technologies.map((technology) => (
+                  <li
+                    key={technology}
+                    className="rounded-md border border-line bg-surface px-2 py-1 font-mono text-[10px] text-muted"
+                  >
+                    {technology}
+                  </li>
+                ))}
+              </ul>
+            </div>
+            <p className="mt-4 max-w-2xl text-xs leading-relaxed text-muted">
+              {infrastructure.note} Verified against the configurations and test results at the time
+              of the engagement; this is not a live audit of the current server state.
+            </p>
+          </Reveal>
         </div>
       </section>
 
@@ -285,8 +341,8 @@ export default function HomePage() {
                 </h2>
                 <p className="mt-4 text-[15px] leading-relaxed text-muted">
                   I am open to fullstack and backend roles, and to selected freelance work. The
-                  fastest way to reach me is email. The portfolio PDF is available below if you
-                  need a single document to share internally.
+                  fastest way to reach me is email. Two documents are available below: a two-page
+                  ATS-friendly resume, and a portfolio deck with the case studies and screenshots.
                 </p>
 
                 <div className="mt-8 flex flex-wrap gap-3">
@@ -297,15 +353,9 @@ export default function HomePage() {
                     <Mail className="h-4 w-4" aria-hidden="true" />
                     {siteConfig.email}
                   </a>
-                  <a
-                    href={siteConfig.resumeFile}
-                    download={siteConfig.resumeFileName}
-                    className="inline-flex h-11 items-center gap-2 rounded-full border border-line-strong bg-bg px-5 text-sm font-medium transition-colors hover:border-accent/50"
-                  >
-                    <Download className="h-4 w-4" aria-hidden="true" />
-                    Download portfolio PDF
-                  </a>
                 </div>
+
+                <DownloadButtons className="mt-4" />
 
                 <div className="mt-8 flex flex-wrap items-center gap-x-6 gap-y-2 text-xs text-muted">
                   <span className="font-mono">{siteConfig.location}</span>
@@ -317,6 +367,15 @@ export default function HomePage() {
                     className="inline-flex min-h-11 items-center gap-1 transition-colors hover:text-fg"
                   >
                     github.com/echestratus
+                    <ArrowUpRight className="h-3 w-3" aria-hidden="true" />
+                  </a>
+                  <a
+                    href={siteConfig.linkedin}
+                    target="_blank"
+                    rel="noreferrer noopener"
+                    className="inline-flex min-h-11 items-center gap-1 transition-colors hover:text-fg"
+                  >
+                    linkedin
                     <ArrowUpRight className="h-3 w-3" aria-hidden="true" />
                   </a>
                 </div>
