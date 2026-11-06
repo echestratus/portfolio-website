@@ -49,9 +49,9 @@ python -m http.server 4321 --directory out
 
 ## Option A — Git integration (recommended, $0)
 
-1. Push this folder to a GitHub or GitLab repository.
+1. The repository is already published: `echestratus/portfolio-website`.
 2. In the Cloudflare dashboard go to **Workers & Pages → Create → Pages → Connect to Git**.
-3. Select the repository.
+3. Select `echestratus/portfolio-website`.
 4. Use these build settings:
 
    | Setting | Value |

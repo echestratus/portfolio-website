@@ -10,6 +10,7 @@
     "lint": "eslint src",
     "typecheck": "tsc --noEmit",
     "verify": "npm run lint && npm run typecheck && npm run build",
+    "fix:trailer": "node scripts/strip-ai-trailer.mjs",
     "prepare": "node scripts/install-hooks.mjs"
   },
   "dependencies": {
