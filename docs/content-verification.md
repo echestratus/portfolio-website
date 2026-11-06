@@ -21,13 +21,15 @@ Where a claim could only be supported by the PDF, the project page says so in it
 - **Verified:** monorepo layout (`apps/api`, `apps/web`, `apps/admin`, `packages/shared`); NestJS 11, Prisma 6, PostgreSQL, Redis/BullMQ, Meilisearch; public repository; live site.
 - **Verified features:** CV import and parsing, matching, ATS pipeline, Telegram integration, PWA, employer verification, admin moderation. Commit subjects and route trees support each.
 - **Contribution:** 170 commits, the largest single author count.
+- **Refreshed:** six screenshots captured from the staging build in November 2026 (252 published vacancies), replacing the older PDF visuals.
 - **Not claimed:** sole authorship, customer numbers, revenue, production SLAs.
 
 ### Hadith Hotel Management System
 
 - **Verified:** Next.js 16, PostgreSQL, Drizzle, MinIO, Exely integration, role-based permissions, audit log, printing modules.
 - **Verified contribution:** 214 commits covering purchasing, POS, assets, warehouse, QA harness, and failover.
-- **Not claimed:** live operational screenshots or client testimonials. The system is internal.
+- **Refreshed:** six operational screenshots captured from the staging deployment: rooms, housekeeping, reservations, warehouse, purchasing, assets. Guest identities and monetary amounts are blurred.
+- **Not claimed:** that the screens are publicly reachable, or any revenue figure. The repository stays private and a walkthrough is offered instead.
 
 ### 7Oz Espresso
 
@@ -45,6 +47,7 @@ Where a claim could only be supported by the PDF, the project page says so in it
 
 - **Verified:** Next.js full-stack app, 26-table schema, stock ledger, serial/lot lifecycles, stocktakes, barcode scanning, PWA, S3 storage.
 - **Verified contribution:** stock and master data, serial/lot, product 360, object storage, governance, UI refresh.
+- **Refreshed:** three screenshots from the production deployment (scan workstation, barcode labels, sign-in). The live instance holds a small data set, and the captions say so rather than implying a busy production system.
 - **Not claimed:** that the entire system was built by Farhan; 12 commits belong to another author.
 
 ### EGI Resources Holding

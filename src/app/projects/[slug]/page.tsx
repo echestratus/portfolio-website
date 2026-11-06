@@ -11,12 +11,14 @@ import {
   GitBranch,
   Info,
   Layers,
+  Mail,
   ShieldCheck,
   UserRound,
 } from "lucide-react";
 import { ProjectCard } from "@/components/project-card";
 import { Reveal } from "@/components/reveal";
 import { getProjectBySlug, getRelatedProjects, projects } from "@/data/projects";
+import { siteConfig } from "@/data/site";
 import type { Project } from "@/data/project-types";
 
 export const dynamicParams = false;
@@ -100,6 +102,8 @@ export default async function ProjectPage({ params }: { params: Promise<{ slug: 
   const confidentiality = confidentialityLabel(project);
   const cover = project.cover ?? project.evidence.screenshots[0];
   const gallery = project.evidence.screenshots.filter((image) => image.src !== cover?.src);
+  const requestAccess =
+    !project.links.liveDemo && !project.links.github && project.confidentiality !== "public";
 
   return (
     <article>
@@ -192,6 +196,22 @@ export default async function ProjectPage({ params }: { params: Promise<{ slug: 
                 ))}
               </div>
             )}
+
+            {requestAccess && (
+              <div className="mt-8">
+                <a
+                  href={`mailto:${siteConfig.email}?subject=${encodeURIComponent(`Walkthrough request: ${project.title}`)}`}
+                  className="inline-flex h-11 items-center gap-2 rounded-full bg-accent px-4 text-sm font-medium text-accent-contrast transition-colors hover:bg-accent-hover sm:h-10"
+                >
+                  <Mail className="h-4 w-4" aria-hidden="true" />
+                  Request a walkthrough
+                </a>
+                <p className="mt-2.5 text-xs text-muted">
+                  Client confidentiality applies. Source code and a live demo can be shared
+                  privately on request.
+                </p>
+              </div>
+            )}
           </div>
 
           <aside className="rounded-xl border border-line bg-surface p-5 sm:p-6">
@@ -217,9 +237,14 @@ export default async function ProjectPage({ params }: { params: Promise<{ slug: 
               <p className="mt-2 text-xs leading-relaxed text-muted">{project.evidence.note}</p>
             </div>
 
-            {!hasLinks && (
+            {!hasLinks && !requestAccess && (
               <p className="mt-4 text-xs leading-relaxed text-muted">
                 No public repository or demo is available for this project.
+              </p>
+            )}
+            {requestAccess && (
+              <p className="mt-4 text-xs leading-relaxed text-muted">
+                Private repository and internal deployment. Access can be arranged.
               </p>
             )}
           </aside>
@@ -431,6 +456,16 @@ export default async function ProjectPage({ params }: { params: Promise<{ slug: 
                   <dt className="text-xs text-muted">Category</dt>
                   <dd className="max-w-[60%] text-right text-xs font-medium">
                     {project.category.join(", ")}
+                  </dd>
+                </div>
+                <div className="flex items-start justify-between gap-4 py-3">
+                  <dt className="text-xs text-muted">Source</dt>
+                  <dd className="max-w-[60%] text-right text-xs font-medium">
+                    {project.links.github
+                      ? "Public repository"
+                      : project.confidentiality === "restricted"
+                        ? "Private repository"
+                        : "Case study only"}
                   </dd>
                 </div>
                 <div className="flex items-start justify-between gap-4 py-3 last:pb-0">

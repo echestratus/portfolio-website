@@ -54,7 +54,7 @@ Additional folder: `Documents\DriteAttire` contains brand assets and a reference
 - No README or document in any repository states individual responsibilities. Contributions were inferred from author-filtered Git history and commit subjects, and are described as scope rather than sole authorship.
 - `dev-battalion` implements the dashboard and the MQTT/alerting backend, but **not** the specification's CSV export or its three-role permission model. Those are called out as unimplemented on the project page.
 - `hotel-kampoeng-indonesia` has no attributable commits and no documented deployment URL. It was **excluded from the public portfolio**; see the content verification report.
-- Several projects have no application screenshots in their repositories. Genuine screenshots were captured from live deployments where public, taken from the portfolio PDF, or reused from real staging captures in the Cari Kerja repository.
+- Screenshots for the internal systems were captured in November 2026 from the staging HMS deployment and the production IMS deployment, using temporary review accounts that were deleted afterwards. Guest identities and monetary amounts are blurred; report and folio screens were not published.
 - No employment dates, employer contracts, certifications, or client testimonials were available and none were invented.
 
 ## 6. Evidence and links
