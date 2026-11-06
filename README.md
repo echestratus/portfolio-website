@@ -49,15 +49,20 @@ The site only renders links and claims that are supported by the audit. See `doc
 
 ## Deploy to Cloudflare Pages
 
+Live: **https://farhan-nur-hakim.pages.dev**
+
 1. Push this repository to GitHub.
 2. Cloudflare dashboard → **Workers & Pages → Create → Pages → Connect to Git**.
 3. Build command `npm run build`; output directory `out`.
 4. Production branch `main`. Every other branch becomes a preview deployment.
 5. Environment variables:
    - `NODE_VERSION=22`
-   - `NEXT_PUBLIC_SITE_URL=https://<your-project>.pages.dev`
+   - `NEXT_PUBLIC_SITE_URL=https://farhan-nur-hakim.pages.dev`
 6. Deploy.
 
+Do not connect this repository as a **Worker**. A Workers build ends in
+`npx wrangler deploy`, which fails with `Missing entry-point to Worker script or
+to assets directory` because the repo only declares `pages_build_output_dir`.
 Full instructions, limits, verification checklist, and direct-upload commands: [`docs/deployment-guide.md`](docs/deployment-guide.md).
 
 ## Project structure

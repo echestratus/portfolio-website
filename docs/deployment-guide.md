@@ -72,11 +72,34 @@ python -m http.server 4321 --directory out
    | Variable | Value |
    |---|---|
    | `NODE_VERSION` | `22` |
-   | `NEXT_PUBLIC_SITE_URL` | `https://<your-project>.pages.dev` (or your custom domain) |
+   | `NEXT_PUBLIC_SITE_URL` | `https://farhan-nur-hakim.pages.dev` |
 
    `NEXT_PUBLIC_SITE_URL` only affects canonical URLs, Open Graph URLs, `robots.txt`, and `sitemap.xml`. The site builds without it, but the default placeholder should be replaced before sharing the link.
 
 6. Save and deploy. The first build produces a `*.pages.dev` URL.
+
+### Current project
+
+| Field | Value |
+|---|---|
+| Dashboard name | `farhan-nur-hakim` |
+| Production URL | https://farhan-nur-hakim.pages.dev |
+| Build command | `npm run build` |
+| Output directory | `out` |
+| Production branch | `main` |
+| Node | 22 |
+
+The project was created through the API with a GitHub source, so every push to `main` starts a production build and every other branch starts a preview build.
+
+### Do not connect this repo as a Worker
+
+Connecting the same repository through **Workers & Pages → Create → Worker → Connect to Git** fails, and the error is easy to misread as a code defect:
+
+```text
+X [ERROR] Missing entry-point to Worker script or to assets directory
+```
+
+That happens because a Workers build finishes with `npx wrangler deploy`, which needs a `main` entry point or an `[assets]` directory. `wrangler.toml` in this repo only declares `pages_build_output_dir = "out"`, a Pages-only key that `wrangler deploy` ignores. The repository is built for Pages and should never be wired to a Worker build. If a stray Worker exists, delete it in **Workers & Pages → the Worker → Settings → Delete**; a Worker with no assets binding answers 404 on `*.workers.dev`.
 
 ### If the build fails
 
@@ -84,6 +107,7 @@ python -m http.server 4321 --directory out
 - **Node version error** — set `NODE_VERSION=22`. The repo also contains `.nvmrc` and `.node-version`.
 - **Output directory not found** — the build must finish successfully and create `out/`. Check that `next.config.ts` still contains `output: "export"`.
 - **404 on `/projects/foo/`** — `trailingSlash: true` must remain enabled; all internal links already include the slash.
+- **`Missing entry-point to Worker script or to assets directory`** — the repo is attached to a Worker build instead of a Pages project. See the section above.
 
 ## Option B — Direct upload with Wrangler
 
