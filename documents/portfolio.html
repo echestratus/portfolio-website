@@ -1,0 +1,874 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>Farhan Nur Hakim — Portfolio</title>
+    <style>
+      @page {
+        size: A4;
+        margin: 0;
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      html,
+      body {
+        margin: 0;
+        padding: 0;
+      }
+
+      body {
+        font-family: "Segoe UI", Arial, Helvetica, sans-serif;
+        color: #0d1216;
+        background: #ffffff;
+        -webkit-print-color-adjust: exact;
+        print-color-adjust: exact;
+        font-size: 10pt;
+        line-height: 1.5;
+      }
+
+      .page {
+        position: relative;
+        width: 210mm;
+        height: 297mm;
+        padding: 18mm 17mm 14mm;
+        overflow: hidden;
+        break-after: page;
+        page-break-after: always;
+      }
+
+      .page:last-child {
+        break-after: auto;
+        page-break-after: auto;
+      }
+
+      .kicker {
+        font-family: "Consolas", "Courier New", monospace;
+        font-size: 7.5pt;
+        letter-spacing: 1.6pt;
+        text-transform: uppercase;
+        color: #0e7490;
+        margin: 0 0 6pt;
+      }
+
+      .rule {
+        height: 1px;
+        background: #dfe3e6;
+        margin: 12pt 0;
+      }
+
+      h1 {
+        font-size: 40pt;
+        line-height: 1;
+        letter-spacing: -1.4pt;
+        margin: 0 0 8pt;
+      }
+
+      h2 {
+        font-size: 19pt;
+        line-height: 1.1;
+        letter-spacing: -0.5pt;
+        margin: 0 0 8pt;
+      }
+
+      h3 {
+        font-size: 12pt;
+        margin: 0 0 4pt;
+      }
+
+      p {
+        margin: 0 0 7pt;
+        color: #3c464e;
+      }
+
+      .muted {
+        color: #5a646d;
+      }
+
+      .small {
+        font-size: 8.5pt;
+        line-height: 1.45;
+      }
+
+      .footer {
+        position: absolute;
+        left: 17mm;
+        right: 17mm;
+        bottom: 9mm;
+        display: flex;
+        justify-content: space-between;
+        font-family: "Consolas", "Courier New", monospace;
+        font-size: 7pt;
+        letter-spacing: 1pt;
+        text-transform: uppercase;
+        color: #87919a;
+        border-top: 1px solid #e6e9eb;
+        padding-top: 5pt;
+      }
+
+      /* Cover */
+      .cover {
+        background: #08090b;
+        color: #e9ecef;
+      }
+
+      .cover h1,
+      .cover h2 {
+        color: #ffffff;
+      }
+
+      .cover p {
+        color: #a9b3bc;
+      }
+
+      .cover .kicker {
+        color: #22d3ee;
+      }
+
+      .cover-grid {
+        position: absolute;
+        inset: 0;
+        background-image: linear-gradient(to right, rgba(255, 255, 255, 0.05) 1px, transparent 1px),
+          linear-gradient(to bottom, rgba(255, 255, 255, 0.05) 1px, transparent 1px);
+        background-size: 38px 38px;
+      }
+
+      .cover-inner {
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        height: 100%;
+      }
+
+      .cover .role {
+        font-size: 15pt;
+        color: #22d3ee;
+        margin: 0 0 14pt;
+      }
+
+      .cover .lede {
+        font-size: 11pt;
+        max-width: 132mm;
+        color: #c3ccd4;
+      }
+
+      .cover-meta {
+        display: flex;
+        gap: 18mm;
+        font-size: 8.5pt;
+        color: #a9b3bc;
+      }
+
+      .cover-meta strong {
+        display: block;
+        color: #ffffff;
+        font-weight: 600;
+        margin-bottom: 2pt;
+      }
+
+      .chips {
+        margin: 14pt 0 0;
+        padding: 0;
+        list-style: none;
+      }
+
+      .chips li {
+        display: inline-block;
+        border: 1px solid rgba(255, 255, 255, 0.18);
+        border-radius: 20px;
+        padding: 3pt 9pt;
+        margin: 0 4pt 4pt 0;
+        font-size: 8pt;
+        color: #dfe5ea;
+      }
+
+      /* Layout helpers */
+      .cols {
+        display: flex;
+        gap: 10mm;
+      }
+
+      .col {
+        flex: 1;
+      }
+
+      .stat-row {
+        display: flex;
+        gap: 6mm;
+        margin: 12pt 0 0;
+      }
+
+      .stat {
+        flex: 1;
+        border: 1px solid #e1e5e8;
+        border-radius: 6pt;
+        padding: 8pt 9pt;
+      }
+
+      .stat b {
+        display: block;
+        font-size: 17pt;
+        letter-spacing: -0.4pt;
+        color: #0e7490;
+      }
+
+      .stat span {
+        font-size: 7.6pt;
+        text-transform: uppercase;
+        letter-spacing: 0.8pt;
+        color: #6c767e;
+      }
+
+      .cards {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 5mm;
+        margin-top: 10pt;
+      }
+
+      .card {
+        border: 1px solid #e1e5e8;
+        border-radius: 6pt;
+        padding: 9pt 10pt;
+      }
+
+      .card h3 {
+        font-size: 10.5pt;
+        margin-bottom: 3pt;
+      }
+
+      .card p {
+        font-size: 8.6pt;
+        margin: 0;
+      }
+
+      /* Timeline */
+      .job {
+        padding: 0 0 9pt;
+        border-bottom: 1px solid #eceff1;
+        margin-bottom: 9pt;
+      }
+
+      .job:last-child {
+        border-bottom: none;
+      }
+
+      .job-head {
+        display: flex;
+        justify-content: space-between;
+        align-items: baseline;
+        gap: 6mm;
+      }
+
+      .job-head h3 {
+        font-size: 11pt;
+        margin: 0;
+      }
+
+      .job-head span {
+        font-family: "Consolas", "Courier New", monospace;
+        font-size: 7.8pt;
+        color: #6c767e;
+        white-space: nowrap;
+      }
+
+      .job .org {
+        font-size: 8.6pt;
+        color: #0e7490;
+        margin: 1pt 0 3pt;
+      }
+
+      .job ul {
+        margin: 3pt 0 0;
+        padding-left: 12pt;
+      }
+
+      .job li {
+        font-size: 8.8pt;
+        color: #3c464e;
+        margin-bottom: 2pt;
+      }
+
+      /* Project pages */
+      .shot {
+        width: 100%;
+        height: 96mm;
+        object-fit: cover;
+        object-position: top;
+        border: 1px solid #dfe3e6;
+        border-radius: 5pt;
+        margin-bottom: 5pt;
+      }
+
+      .shot-row {
+        display: flex;
+        gap: 4mm;
+        margin-bottom: 6pt;
+      }
+
+      .shot-row img {
+        width: 50%;
+        height: 70mm;
+        object-fit: cover;
+        object-position: top;
+        border: 1px solid #dfe3e6;
+        border-radius: 5pt;
+      }
+
+      .caption {
+        font-size: 7.4pt;
+        color: #7b858d;
+        margin: 0 0 8pt;
+      }
+
+      .tags {
+        margin: 6pt 0 0;
+        padding: 0;
+        list-style: none;
+      }
+
+      .tags li {
+        display: inline-block;
+        background: #f2f5f6;
+        border: 1px solid #e1e6e9;
+        border-radius: 3pt;
+        padding: 2pt 6pt;
+        margin: 0 3pt 3pt 0;
+        font-family: "Consolas", "Courier New", monospace;
+        font-size: 7.4pt;
+        color: #45505a;
+      }
+
+      .two-col {
+        display: table;
+        width: 100%;
+        table-layout: fixed;
+        border-collapse: separate;
+        border-spacing: 6mm 0;
+        margin-left: -6mm;
+      }
+
+      .two-col > div {
+        display: table-cell;
+        vertical-align: top;
+        width: 50%;
+      }
+
+      /* Project index table (plain, no borders for print clarity) */
+      .index-row {
+        display: flex;
+        justify-content: space-between;
+        gap: 6mm;
+        padding: 4.5pt 0;
+        border-bottom: 1px solid #eef1f2;
+        font-size: 8.8pt;
+      }
+
+      .index-row:last-child {
+        border-bottom: none;
+      }
+
+      .index-row span:last-child {
+        font-family: "Consolas", "Courier New", monospace;
+        font-size: 7.6pt;
+        color: #6c767e;
+        white-space: nowrap;
+      }
+
+      .contact-line {
+        font-size: 9.4pt;
+        margin-bottom: 4pt;
+        color: #263038;
+      }
+
+      .accent {
+        color: #0e7490;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- 1. Cover -->
+    <section class="page cover">
+      <div class="cover-grid"></div>
+      <div class="cover-inner">
+        <div>
+          <p class="kicker" style="margin-top: 12mm">Portfolio · 2026</p>
+        </div>
+
+        <div>
+          <p class="role">Fullstack Web Developer &amp; Backend Engineer</p>
+          <h1>Farhan Nur<br />Hakim</h1>
+          <p class="lede">
+            Software engineer building operational web systems for a holding
+            group and its subsidiaries — hotel operations, inventory ledgers,
+            hiring platforms, and the servers they run on.
+          </p>
+          <ul class="chips">
+            <li>Next.js</li>
+            <li>TypeScript</li>
+            <li>NestJS</li>
+            <li>Go</li>
+            <li>PostgreSQL</li>
+            <li>Docker</li>
+            <li>Nginx</li>
+            <li>Linux</li>
+          </ul>
+        </div>
+
+        <div class="cover-meta">
+          <div>
+            <strong>Email</strong>
+            farhanz.nh.13@gmail.com
+          </div>
+          <div>
+            <strong>Known as</strong>
+            Hakim
+          </div>
+          <div>
+            <strong>Location</strong>
+            Kota Tasikmalaya, West Java
+          </div>
+          <div>
+            <strong>Online</strong>
+            farhan-nur-hakim.pages.dev
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 2. Profile -->
+    <section class="page">
+      <p class="kicker">01 · Profile</p>
+      <h2>Software that has to work on a Tuesday morning.</h2>
+      <p>
+        I build the systems that sit behind a business: booking and housekeeping
+        flows, stock ledgers that cannot silently drift, purchasing approvals,
+        barcode receiving, hiring pipelines. Most of my work is judged by whether
+        staff can finish a shift without working around the software.
+      </p>
+      <p>
+        I work across the whole path — data model, API, interface, and the server
+        that publishes it. That last part matters: for one of the hotels I took
+        responsibility for the firewall, remote access, TLS, and container
+        recovery, not only the application code.
+      </p>
+
+      <div class="stat-row">
+        <div class="stat"><b>5</b><span>Production systems</span></div>
+        <div class="stat"><b>15+</b><span>Corporate websites</span></div>
+        <div class="stat"><b>18</b><span>Documented projects</span></div>
+        <div class="stat"><b>2</b><span>Countries served</span></div>
+      </div>
+
+      <div class="rule"></div>
+
+      <p class="kicker">What I do</p>
+      <div class="cards">
+        <div class="card">
+          <h3>Product &amp; fullstack</h3>
+          <p>
+            Server-rendered interfaces, typed APIs, authentication, and the
+            release pipeline that puts them online.
+          </p>
+        </div>
+        <div class="card">
+          <h3>Backend &amp; data</h3>
+          <p>
+            Relational modelling, stock and financial ledgers, background jobs,
+            search, and third-party integrations.
+          </p>
+        </div>
+        <div class="card">
+          <h3>Operational systems</h3>
+          <p>
+            Hotel front office, purchasing, warehouse counts, POS shifts, asset
+            registers, and hiring pipelines.
+          </p>
+        </div>
+        <div class="card">
+          <h3>Infrastructure</h3>
+          <p>
+            Linux and Windows Server, hardened remote access, firewall rules,
+            reverse proxy, automatic TLS, and containers.
+          </p>
+        </div>
+      </div>
+
+      <div class="rule"></div>
+
+      <p class="kicker">Working principles</p>
+      <p class="small">
+        <strong>Model the rules, not just the screens.</strong> Stock movement,
+        permissions, and money are enforced in the schema and the server, not in a
+        hidden button.<br />
+        <strong>Evidence over adjectives.</strong> A project page states what was
+        built, what was verified, and what was out of scope.<br />
+        <strong>Design for the person at the counter.</strong> Operational
+        software is used standing up, on a phone, with a queue waiting.
+      </p>
+
+      <div class="footer">
+        <span>Farhan Nur Hakim · Portfolio</span>
+        <span>02</span>
+      </div>
+    </section>
+
+    <!-- 3. Experience -->
+    <section class="page">
+      <p class="kicker">02 · Experience</p>
+      <h2>Where the work was delivered.</h2>
+
+      <div class="job">
+        <div class="job-head">
+          <h3>Software Engineer — PT EGI Resources</h3>
+          <span>Nov 2024 – Present</span>
+        </div>
+        <p class="org">
+          Holding company · hospitality, defence optics, F&amp;B, and IT projects
+        </p>
+        <ul>
+          <li>
+            Delivered five production systems: Hadith Hotel Management System,
+            EGI Optik Inventory System, Job Talentio, Cari Kerja, and the 7Oz
+            Espresso platform.
+          </li>
+          <li>
+            Built the group's web estate: holding-company site, EGI Optik
+            Indonesia, Saji Nusantara, Humble 8, and Hotel Kampoeng Indonesia.
+          </li>
+          <li>
+            Owned application and infrastructure delivery for Hadith Hotel:
+            key-only SSH, restricted jump host, Kerio Control firewall and VPN
+            rules, Nginx with Let's Encrypt automatic TLS, and Docker recovery.
+          </li>
+          <li>
+            Designed PostgreSQL schemas and REST APIs with server-side role
+            checks, audit logging, and immutable ledgers.
+          </li>
+        </ul>
+      </div>
+
+      <div class="job">
+        <div class="job-head">
+          <h3>Combat Management System Junior Engineer — PT AGAT Netcentric</h3>
+          <span>Nov 2024 – Present</span>
+        </div>
+        <p class="org">Defence systems · shipborne software</p>
+        <ul>
+          <li>
+            Developed combat management software using C++, Java, and Qt, with
+            PostgreSQL data management.
+          </li>
+          <li>
+            Customised shipborne installations to integrate with varied hardware
+            and weapon systems.
+          </li>
+        </ul>
+      </div>
+
+      <div class="job">
+        <div class="job-head">
+          <h3>Procurement Engineer — Nextgen Innotech Solutions</h3>
+          <span>Dec 2025 – Apr 2026</span>
+        </div>
+        <p class="org">Singapore · part-time, remote</p>
+        <ul>
+          <li>
+            Procured electronic and optical equipment for research and
+            defence-related programmes, including international sourcing and
+            shipping documentation.
+          </li>
+        </ul>
+      </div>
+
+      <div class="job">
+        <div class="job-head">
+          <h3>Research &amp; Development — Aruna Indonesia</h3>
+          <span>Oct 2022 – Jul 2023</span>
+        </div>
+        <p class="org">Contract · lobster monitoring at the Amed sea farm</p>
+        <ul>
+          <li>
+            Trained and evaluated YOLOv6, YOLOv7, and YOLOv8 models and integrated
+            real-time detection, tracking, and counting with deep-learning image
+            enhancement.
+          </li>
+        </ul>
+      </div>
+
+      <div class="rule"></div>
+
+      <p class="kicker">Education</p>
+      <div class="job" style="border-bottom: none; margin-bottom: 0">
+        <div class="job-head">
+          <h3>Telkom University — Telecommunications Engineering</h3>
+          <span>Aug 2019 – Sep 2023</span>
+        </div>
+        <p class="org">Bachelor's degree · GPA 3.73/4.00, cum laude</p>
+        <ul>
+          <li>
+            Final project: Smart Camera Lobster — real-time monitoring and
+            counting using YOLOv7 and StrongSORT.
+          </li>
+          <li>TensorFlow Developer Certificate via Bangkit Academy (2022).</li>
+        </ul>
+      </div>
+
+      <div class="footer">
+        <span>Farhan Nur Hakim · Portfolio</span>
+        <span>03</span>
+      </div>
+    </section>
+
+    <!-- 4. Hadith HMS -->
+    <section class="page">
+      <p class="kicker">03 · Featured project</p>
+      <h2>Hadith Hotel Management System</h2>
+      <p class="muted">
+        Hotel operations platform for a property in Samarkand — and the on-premise
+        servers that publish it.
+      </p>
+      <img class="shot" src="../public/images/projects/hadith-hms/rooms.webp" alt="Room board" />
+      <p class="caption">Room board across 121 rooms, with floor and status per unit.</p>
+      <div class="shot-row">
+        <img src="../public/images/projects/hadith-hms/warehouse.webp" alt="Warehouse stock" />
+        <img src="../public/images/projects/hadith-hms/purchasing.webp" alt="Purchase requests" />
+      </div>
+      <p class="caption">
+        Warehouse stock ledger (left) and purchase requests with amounts masked (right).
+      </p>
+
+      <p class="small">
+        <strong>Coverage.</strong> Reservations, front office, housekeeping, POS
+        with cashier shifts, purchasing approvals, warehouse, fixed assets,
+        invoicing, and night audit.
+      </p>
+      <p class="small">
+        <strong>Build.</strong> Next.js with server-rendered modules over
+        PostgreSQL and Drizzle. Stock moves through an immutable ledger,
+        permissions are checked server-side, and documents print in the format
+        staff hand to guests and suppliers.
+      </p>
+      <p class="small">
+        <strong class="accent">Infrastructure.</strong> Hardened key-only SSH on
+        Linux and Windows Server, a restricted jump host, Kerio Control firewall
+        and VPN rules, Nginx with Let's Encrypt automatic renewal, and recovery of
+        the stopped PostgreSQL, MinIO, and application containers to a healthy
+        public HTTPS state.
+      </p>
+
+      <div class="footer">
+        <span>Farhan Nur Hakim · Portfolio</span>
+        <span>04</span>
+      </div>
+    </section>
+
+    <!-- 5. Job Talentio -->
+    <section class="page">
+      <p class="kicker">04 · Featured project</p>
+      <h2>Job Talentio</h2>
+      <p class="muted">
+        Job portal and applicant tracking system for the Uzbekistan market,
+        operating in Uzbek, Russian, and English.
+      </p>
+      <img class="shot" src="../public/images/projects/job-talentio/home.webp" alt="Job Talentio homepage" />
+      <p class="caption">Candidate homepage with category, city, and company discovery.</p>
+      <div class="shot-row">
+        <img src="../public/images/projects/job-talentio/job-discovery.webp" alt="Job search" />
+        <img src="../public/images/projects/job-talentio/job-detail.webp" alt="Job detail" />
+      </div>
+      <p class="caption">Job search with filters (left) and a vacancy detail page (right).</p>
+
+      <p class="small">
+        <strong>Coverage.</strong> CV import with OCR, weighted candidate matching,
+        hiring pipeline, saved jobs, in-app chat, job alerts, Telegram sign-in, and
+        a super-admin console.
+      </p>
+      <p class="small">
+        <strong>Build.</strong> A pnpm monorepo with a NestJS API, separate Next.js
+        apps for the portal and the admin console, Prisma over PostgreSQL,
+        Meilisearch for search, and Redis queues for alerts and indexing.
+      </p>
+      <p class="small">
+        <strong class="accent">Live.</strong> Currently served from the staging
+        deployment at staging.jobtalent.io, with 252 published vacancies across
+        hospitality, IT, sales, and finance. Repositories are public.
+      </p>
+
+      <div class="footer">
+        <span>Farhan Nur Hakim · Portfolio</span>
+        <span>05</span>
+      </div>
+    </section>
+
+    <!-- 6. Inventory -->
+    <section class="page">
+      <p class="kicker">05 · Featured project</p>
+      <h2>EGI Optik Inventory System</h2>
+      <p class="muted">
+        Inventory and asset ledger for a defence-optics company, built mobile-first
+        for the warehouse floor.
+      </p>
+      <img class="shot" style="height: 92mm" src="../public/images/projects/egi-ims/scan.webp" alt="Scan workstation" />
+      <p class="caption">
+        Scan workstation with five operating modes: lookup, receiving, issue,
+        transfer, and stocktake.
+      </p>
+      <div class="shot-row">
+        <img style="height: 60mm" src="../public/images/projects/egi-ims/labels.webp" alt="Barcode labels" />
+        <img style="height: 60mm" src="../public/images/projects/egi-ims/login-page.webp" alt="Sign-in screen" />
+      </div>
+      <p class="caption">Barcode label printing (left) and the staff sign-in (right).</p>
+
+      <p class="small">
+        <strong>Coverage.</strong> Receiving, issuing, transfers, and stocktakes;
+        serial and lot lifecycles; calibration and document expiry tracking;
+        barcode label printing; product and serial history views.
+      </p>
+      <p class="small">
+        <strong>Build.</strong> A single Next.js application over PostgreSQL. Stock
+        moves through an immutable ledger with row-level locking on balances, files
+        live in S3-compatible storage, and the interface is mobile-first so
+        scanning works on warehouse phones.
+      </p>
+      <p class="small">
+        <strong class="accent">Note.</strong> The live deployment currently holds a
+        limited data set, so lists appear sparse. The repository is private and a
+        walkthrough can be arranged.
+      </p>
+
+      <div class="footer">
+        <span>Farhan Nur Hakim · Portfolio</span>
+        <span>06</span>
+      </div>
+    </section>
+
+    <!-- 7. 7Oz -->
+    <section class="page">
+      <p class="kicker">06 · Featured project</p>
+      <h2>7Oz Espresso</h2>
+      <p class="muted">
+        Cafe platform for a brand with outlets across Uzbekistan: public website,
+        staff dashboard, and a Go API.
+      </p>
+      <img class="shot" style="height: 82mm" src="../public/images/projects/7oz-cafe/home.webp" alt="7Oz Espresso homepage" />
+      <p class="caption">
+        Public site with menu, outlets, gallery, stories, and reservations.
+      </p>
+
+      <p class="small">
+        <strong>Coverage.</strong> Menu, outlets, gallery, stories, and
+        reservations on the public site; content, customers, loyalty, membership,
+        and staff users in the dashboard.
+      </p>
+      <p class="small">
+        <strong>Build.</strong> A Turborepo monorepo with three deployable apps: a
+        public Next.js site, an internal Next.js dashboard, and a Go/Fiber REST API
+        over PostgreSQL and Redis. Sessions, RBAC, and audit logging live in the
+        API; releases run through containerized staging and production stacks
+        behind nginx.
+      </p>
+      <p class="small">
+        <strong class="accent">Live.</strong> Served at 7oz-espresso.com from the
+        group's own infrastructure, with a public repository.
+      </p>
+
+      <div class="footer">
+        <span>Farhan Nur Hakim · Portfolio</span>
+        <span>07</span>
+      </div>
+    </section>
+
+    <!-- 7. Project index -->
+    <section class="page">
+      <p class="kicker">08 · Project index</p>
+      <h2>Eighteen documented projects.</h2>
+      <p class="muted">
+        Full case studies, including scope and evidence, are on the website.
+      </p>
+
+      <div style="margin-top: 8pt">
+        <div class="index-row"><span>Hadith Hotel Management System</span><span>Next.js · PostgreSQL</span></div>
+        <div class="index-row"><span>Job Talentio</span><span>Next.js · NestJS</span></div>
+        <div class="index-row"><span>EGI Optik Inventory System</span><span>Next.js · PostgreSQL</span></div>
+        <div class="index-row"><span>Cari Kerja</span><span>Vue 3 · Express</span></div>
+        <div class="index-row"><span>7Oz Espresso</span><span>Go · Next.js</span></div>
+        <div class="index-row"><span>EGI Resources Holding</span><span>React · FastAPI</span></div>
+        <div class="index-row"><span>EGI Optik Indonesia</span><span>WordPress · PHP</span></div>
+        <div class="index-row"><span>Saji Nusantara</span><span>Next.js</span></div>
+        <div class="index-row"><span>Humble 8</span><span>Next.js</span></div>
+        <div class="index-row"><span>Hotel Kampoeng Indonesia</span><span>Next.js · Exely</span></div>
+        <div class="index-row"><span>VILERT IoT Monitoring</span><span>React · Express · MQTT</span></div>
+        <div class="index-row"><span>Smart Camera Lobster</span><span>YOLOv7 · StrongSORT</span></div>
+        <div class="index-row"><span>HerbCam</span><span>Android · YOLOv5</span></div>
+        <div class="index-row"><span>TenunSantara</span><span>Kotlin · TensorFlow</span></div>
+        <div class="index-row"><span>Drite Attire</span><span>E-commerce</span></div>
+        <div class="index-row"><span>Peworld</span><span>React · Redux</span></div>
+        <div class="index-row"><span>Blanja</span><span>React · Go Fiber</span></div>
+        <div class="index-row"><span>Mama Recipe</span><span>Next.js</span></div>
+      </div>
+
+      <div class="rule"></div>
+
+      <p class="kicker">Infrastructure engagement</p>
+      <p class="small">
+        Hadith Hotel Samarkand runs its own servers behind a Kerio Control
+        firewall, with no cloud dependency. Work delivered and verified:
+        key-only SSH on Linux and Windows Server, a restricted jump host that
+        forwards only the administrative port, Kerio firewall rules and a
+        non-administrative VPN identity, Remote Desktop over SSH tunnel and over
+        VPN with the RDP port closed to the internet, Nginx reverse proxy with
+        Let's Encrypt automatic renewal, and recovery of the stopped PostgreSQL,
+        MinIO, and application containers. The public health endpoint reported
+        database and object storage as ready.
+      </p>
+      <p class="small muted">
+        Internal infrastructure — no addresses, hostnames, or credentials are
+        published.
+      </p>
+
+      <div class="footer">
+        <span>Farhan Nur Hakim · Portfolio</span>
+        <span>08</span>
+      </div>
+    </section>
+
+    <!-- 9. Contact -->
+    <section class="page cover">
+      <div class="cover-grid"></div>
+      <div class="cover-inner">
+        <div>
+          <p class="kicker" style="margin-top: 70mm">09 · Contact</p>
+          <h2>Let's talk about the system you need built.</h2>
+          <p class="lede">
+            Open to fullstack and backend roles, and to selected freelance work.
+            Repositories, architecture detail, and walkthroughs of the internal
+            systems are available on request.
+          </p>
+        </div>
+
+        <div>
+          <p class="contact-line" style="color: #e9ecef">
+            farhanz.nh.13@gmail.com
+          </p>
+          <p class="contact-line" style="color: #a9b3bc">+62 821-1915-1861</p>
+          <p class="contact-line" style="color: #a9b3bc">
+            linkedin.com/in/farhan-nur-hakim
+          </p>
+          <p class="contact-line" style="color: #a9b3bc">
+            github.com/echestratus
+          </p>
+          <p class="contact-line" style="color: #22d3ee">
+            farhan-nur-hakim.pages.dev
+          </p>
+          <p class="small" style="color: #6f7b85; margin-top: 10pt">
+            Kota Tasikmalaya, West Java, Indonesia
+          </p>
+        </div>
+      </div>
+    </section>
+  </body>
+</html>

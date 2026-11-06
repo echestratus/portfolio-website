@@ -34,7 +34,7 @@ The PDF's project names were preserved. The website expands the descriptions wit
 | `egi-optics` | WordPress corporate site | WordPress block theme, PHP, theme.json | Live | 3 commits |
 | `EGI-Resources-Holding` | Corporate holding website | React 19, Vite, FastAPI, MongoDB | Live | 19 commits |
 | `hadith-hotel-hms` | Hotel management system | Next.js 16, PostgreSQL, Drizzle, MinIO | Active pilot | 214 commits, largest contributor |
-| `hotel-kampoeng-indonesia` | Hotel marketing + booking site | Next.js 14, React 18, Tailwind 3, Exely | Deployed (no public host documented) | **No commits attributable to Farhan** |
+| `hotel-kampoeng-indonesia` | Hotel marketing + booking site | Next.js 14, React 18, Tailwind 3, Exely | Live at hotel-kampoengindonesia.com | **No commits attributable to Farhan**; inclusion confirmed by the author |
 | `humble8` | Multilingual venue site | Next.js 15, next-intl, Tailwind 4 | Live | 9 of 10 commits |
 | `inventory-management-system` | Internal inventory system | Next.js 16, PostgreSQL, Drizzle, Better Auth, S3 | Active, partially deployed | 10 of 22 commits |
 | `job-portal` | Umbrella folder with 5 repositories | Vue 3, React, Express, NestJS, PostgreSQL, Elasticsearch | Active staging | 76 + 37 + 41 + 11 + 4 commits |
@@ -53,8 +53,8 @@ Additional folder: `Documents\DriteAttire` contains brand assets and a reference
 
 - No README or document in any repository states individual responsibilities. Contributions were inferred from author-filtered Git history and commit subjects, and are described as scope rather than sole authorship.
 - `dev-battalion` implements the dashboard and the MQTT/alerting backend, but **not** the specification's CSV export or its three-role permission model. Those are called out as unimplemented on the project page.
-- `hotel-kampoeng-indonesia` has no attributable commits and no documented deployment URL. It was **excluded from the public portfolio**; see the content verification report.
-- Several projects have no application screenshots in their repositories. Genuine screenshots were captured from live deployments where public, taken from the portfolio PDF, or reused from real staging captures in the Cari Kerja repository.
+- `hotel-kampoeng-indonesia` has no attributable commits. It is **included** on the author's explicit confirmation that he worked on it for EGI Resources' Kampoeng Indonesia property business, and the project page states the attribution basis and the live domain.
+- Screenshots for the internal systems were captured in November 2026 from the staging HMS deployment and the production IMS deployment, using temporary review accounts that were deleted afterwards. Guest identities and monetary amounts are blurred; report and folio screens were not published.
 - No employment dates, employer contracts, certifications, or client testimonials were available and none were invented.
 
 ## 6. Evidence and links

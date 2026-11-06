@@ -84,9 +84,16 @@ export function SiteHeader() {
           <a
             href={siteConfig.resumeFile}
             download={siteConfig.resumeFileName}
-            className="hidden h-9 items-center rounded-full border border-line bg-surface px-4 text-[12px] font-medium text-fg transition-colors hover:border-line-strong sm:inline-flex"
+            className="hidden h-9 items-center gap-1.5 rounded-full bg-accent px-3.5 text-[12px] font-medium text-accent-contrast transition-colors hover:bg-accent-hover sm:inline-flex"
           >
-            Download CV
+            Resume
+          </a>
+          <a
+            href={siteConfig.portfolioFile}
+            download={siteConfig.portfolioFileName}
+            className="hidden h-9 items-center rounded-full border border-line bg-surface px-3.5 text-[12px] font-medium text-fg transition-colors hover:border-line-strong lg:inline-flex"
+          >
+            Portfolio
           </a>
           <ThemeToggle />
           <button
@@ -119,9 +126,18 @@ export function SiteHeader() {
             <a
               href={siteConfig.resumeFile}
               download={siteConfig.resumeFileName}
-              className="flex min-h-11 items-center py-3 text-sm font-medium text-accent"
+              onClick={() => setOpen(false)}
+              className="flex min-h-11 items-center border-t border-line/60 py-3 text-sm font-medium text-accent"
             >
-              Download CV (PDF)
+              Download resume (PDF)
+            </a>
+            <a
+              href={siteConfig.portfolioFile}
+              download={siteConfig.portfolioFileName}
+              onClick={() => setOpen(false)}
+              className="flex min-h-11 items-center border-t border-line/60 py-3 text-sm text-muted"
+            >
+              Download portfolio (PDF)
             </a>
           </nav>
         </div>

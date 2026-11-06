@@ -1,0 +1,409 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>Farhan Nur Hakim — Resume</title>
+    <style>
+      /* ATS-friendly: single column, no tables, no text boxes, no images,
+         standard sans-serif, plain bullets, selectable text. */
+      @page {
+        size: A4;
+        margin: 12mm 14mm;
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      html,
+      body {
+        margin: 0;
+        padding: 0;
+      }
+
+      body {
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: 9.2pt;
+        line-height: 1.34;
+        color: #111111;
+        -webkit-print-color-adjust: exact;
+        print-color-adjust: exact;
+      }
+
+      h1 {
+        font-size: 18pt;
+        line-height: 1.05;
+        margin: 0 0 2.5pt;
+        letter-spacing: -0.2pt;
+      }
+
+      h2 {
+        font-size: 9.8pt;
+        text-transform: uppercase;
+        letter-spacing: 0.6pt;
+        margin: 9pt 0 4pt;
+        padding-bottom: 2pt;
+        border-bottom: 1px solid #b8b8b8;
+      }
+
+      p {
+        margin: 0 0 3.5pt;
+      }
+
+      ul {
+        margin: 0 0 3pt;
+        padding-left: 12pt;
+      }
+
+      li {
+        margin: 0 0 1.6pt;
+      }
+
+      .headline {
+        font-size: 10.2pt;
+        font-weight: bold;
+        margin-bottom: 3pt;
+      }
+
+      .contact {
+        font-size: 8.8pt;
+        margin-bottom: 1pt;
+      }
+
+      .role {
+        font-weight: bold;
+      }
+
+      .meta {
+        font-size: 8.8pt;
+        color: #333333;
+        margin-bottom: 2pt;
+      }
+
+      .item {
+        margin-bottom: 5.5pt;
+      }
+
+      .item:last-child {
+        margin-bottom: 0;
+      }
+
+      .line {
+        margin: 0 0 1pt;
+      }
+
+      .stack {
+        font-size: 8.6pt;
+        color: #333333;
+        margin: 2pt 0 0;
+      }
+
+      strong {
+        font-weight: bold;
+      }
+
+      .skills p {
+        margin: 0 0 1.8pt;
+      }
+
+      .avoid-break {
+        break-inside: avoid;
+        page-break-inside: avoid;
+      }
+    </style>
+  </head>
+  <body>
+    <header class="avoid-break">
+      <h1>Farhan Nur Hakim</h1>
+      <p class="headline">Fullstack Web Developer &amp; Backend Engineer</p>
+      <p class="contact">
+        Kota Tasikmalaya, West Java, Indonesia | +62 821-1915-1861 |
+        farhanz.nh.13@gmail.com
+      </p>
+      <p class="contact">
+        linkedin.com/in/farhan-nur-hakim | github.com/echestratus |
+        Portfolio: farhan-nur-hakim.pages.dev
+      </p>
+    </header>
+
+    <section>
+      <h2>Professional Summary</h2>
+      <p>
+        Telecommunications Engineering graduate from Telkom University (GPA
+        3.73/4.00, cum laude) with three years of professional experience
+        building fullstack web platforms, backend services, and on-premise
+        infrastructure. At PT EGI Resources and its subsidiaries delivered 15+
+        corporate websites and five production systems, including a hotel
+        management platform, an inventory ledger, and a multilingual job portal.
+        Works end to end from database schema to deployment: Go, Node.js, and
+        NestJS APIs; Next.js and React interfaces; PostgreSQL; Docker, Nginx, and
+        Linux administration.
+      </p>
+    </section>
+
+    <section class="skills">
+      <h2>Technical Skills</h2>
+      <p>
+        <strong>Languages:</strong> TypeScript, JavaScript, Go, SQL, PHP, Python,
+        Java, Kotlin, C, C++
+      </p>
+      <p>
+        <strong>Frontend:</strong> Next.js, React, Vue 3, Tailwind CSS, Vite,
+        next-intl, Redux
+      </p>
+      <p>
+        <strong>Backend:</strong> NestJS, Express, Go Fiber, FastAPI, REST APIs,
+        JWT, OAuth, Zod, Socket.IO
+      </p>
+      <p>
+        <strong>Data:</strong> PostgreSQL, Prisma, Drizzle ORM, MongoDB, Redis,
+        Elasticsearch, Meilisearch, S3 / MinIO
+      </p>
+      <p>
+        <strong>Infrastructure:</strong> Docker, Docker Compose, Nginx, Ubuntu
+        Linux, Windows Server, Let's Encrypt, Kerio Control, VPN, SSH hardening,
+        GitHub Actions
+      </p>
+      <p>
+        <strong>Practices:</strong> Agile Scrum, Git, Playwright, Vitest,
+        accessibility, technical documentation
+      </p>
+    </section>
+
+    <section>
+      <h2>Work Experience</h2>
+
+      <div class="item avoid-break">
+        <p class="line"><span class="role">Software Engineer</span> — PT EGI Resources, Indonesia | Nov 2024 – Present</p>
+        <ul>
+          <li>
+            Build and maintain the group's web estate: the corporate holding
+            site, a defence-optics subsidiary site, three hospitality brand
+            sites, and a cafe platform serving outlets in Uzbekistan.
+          </li>
+          <li>
+            Delivered five internal and public production systems: Hadith Hotel
+            Management System, EGI Optik Inventory System, Job Talentio, Cari
+            Kerja, and the 7Oz Espresso platform.
+          </li>
+          <li>
+            Own application and infrastructure delivery for Hadith Hotel:
+            hardened key-only SSH access, a restricted jump host, Kerio Control
+            firewall and VPN rules, Nginx reverse proxy with Let's Encrypt
+            automatic TLS, and recovery of the Docker Compose stack to a healthy
+            public HTTPS state.
+          </li>
+          <li>
+            Designed PostgreSQL schemas and REST APIs with server-side role
+            checks, audit logging, and immutable stock and folio ledgers.
+          </li>
+          <li>
+            Shipped 15+ corporate websites on WordPress with custom themes and
+            block patterns, covering responsive design, SEO readiness, and
+            security hardening.
+          </li>
+        </ul>
+        <p class="stack">
+          Stack: Next.js, React, TypeScript, NestJS, Express, Go, PostgreSQL,
+          Drizzle ORM, Prisma, Docker, Nginx
+        </p>
+      </div>
+
+      <div class="item avoid-break">
+        <p class="line"><span class="role">Combat Management System Junior Engineer</span> — PT AGAT Netcentric, Indonesia | Nov 2024 – Present</p>
+        <ul>
+          <li>
+            Develop combat management software using C++, Java, and the Qt
+            framework for shipborne deployments.
+          </li>
+          <li>
+            Implement PostgreSQL data management and storage for operational
+            records.
+          </li>
+          <li>
+            Customise the system so shipborne installations integrate with varied
+            hardware and weapon systems.
+          </li>
+          <li>
+            Conduct testing and debugging, and provide technical documentation
+            for end users.
+          </li>
+        </ul>
+        <p class="stack">Stack: C++, Java, Qt, PostgreSQL</p>
+      </div>
+
+      <div class="item avoid-break">
+        <p class="line"><span class="role">Procurement Engineer (Part-time)</span> — Nextgen Innotech Solutions, Singapore | Dec 2025 – Apr 2026</p>
+        <ul>
+          <li>
+            Procured electronic and optical equipment for research and
+            defence-related programmes, including vendor sourcing and price
+            negotiation.
+          </li>
+          <li>
+            Managed international purchasing, overseas supplier coordination, and
+            shipping documentation.
+          </li>
+          <li>
+            Handled optical equipment procurement for PT PAL against technical
+            specifications and quality standards.
+          </li>
+        </ul>
+      </div>
+
+      <div class="item avoid-break">
+        <p class="line"><span class="role">Research and Development (Contract)</span> — Aruna Indonesia, Indonesia | Oct 2022 – Jul 2023</p>
+        <ul>
+          <li>
+            Built lobster monitoring software for the Amed sea farm, including
+            real-time detection, tracking, and counting.
+          </li>
+          <li>
+            Trained and evaluated YOLOv6, YOLOv7, and YOLOv8 models, and applied
+            deep-learning image enhancement for underwater footage.
+          </li>
+          <li>
+            Integrated the selected detection and enhancement models and
+            presented results to stakeholders.
+          </li>
+        </ul>
+        <p class="stack">Stack: Python, PyTorch, YOLOv7, StrongSORT, Jetson</p>
+      </div>
+    </section>
+
+    <section>
+      <h2>Selected Projects</h2>
+
+      <div class="item avoid-break">
+        <p class="line">
+          <span class="role">Hadith Hotel Management System</span> — hotel
+          operations platform
+        </p>
+        <p class="meta">
+          Reservations, front office, housekeeping, POS with cashier shifts,
+          purchasing, warehouse, assets, invoicing, and night audit. Stock
+          movements recorded as an immutable ledger; server-side permissions and
+          audit log; printable operational documents.
+        </p>
+        <p class="stack">Next.js, TypeScript, PostgreSQL, Drizzle ORM, MinIO, Playwright</p>
+      </div>
+
+      <div class="item avoid-break">
+        <p class="line">
+          <span class="role">Job Talentio</span> — job portal and applicant
+          tracking for the Uzbekistan market
+        </p>
+        <p class="meta">
+          Candidate, recruiter, and super-admin surfaces in Uzbek, Russian, and
+          English. CV import with OCR, weighted candidate matching, hiring
+          pipeline, Telegram sign-in and alerts, and Meilisearch-backed search.
+        </p>
+        <p class="stack">Next.js, NestJS, PostgreSQL, Prisma, Redis, BullMQ, Meilisearch</p>
+      </div>
+
+      <div class="item avoid-break">
+        <p class="line">
+          <span class="role">EGI Optik Inventory System</span> — inventory and
+          asset ledger for a defence-optics company
+        </p>
+        <p class="meta">
+          Receiving, issuing, transfers, and stocktakes with serial and lot
+          lifecycles, barcode scan workstation, calibration and document expiry
+          tracking, and product and serial history views. Mobile-first installable
+          PWA.
+        </p>
+        <p class="stack">Next.js, PostgreSQL, Drizzle ORM, Better Auth, S3, PWA</p>
+      </div>
+
+      <div class="item avoid-break">
+        <p class="line">
+          <span class="role">Cari Kerja</span> — multi-role job portal
+        </p>
+        <p class="meta">
+          Candidate and recruiter application, super-admin console, and modular
+          Express API with Elasticsearch matching, CV parsing, chat, and staging
+          CI/CD across three repositories.
+        </p>
+        <p class="stack">Vue 3, React, Express, PostgreSQL, Elasticsearch, Redis, Socket.IO</p>
+      </div>
+
+      <div class="item avoid-break">
+        <p class="line">
+          <span class="role">7Oz Espresso</span> — cafe website, staff dashboard,
+          and Go API
+        </p>
+        <p class="meta">
+          Public site with menu, outlets, gallery, and reservations; admin
+          dashboard for content, customers, loyalty, and staff; Go service with
+          PostgreSQL migrations and Redis sessions behind nginx.
+        </p>
+        <p class="stack">Next.js, Go Fiber, PostgreSQL, Redis, Docker, Turborepo</p>
+      </div>
+    </section>
+
+    <section>
+      <h2>Education</h2>
+      <div class="item avoid-break">
+        <p class="line">
+          <span class="role">Telkom University</span>, Bandung — Bachelor's degree,
+          Telecommunications Engineering | Aug 2019 – Sep 2023
+        </p>
+        <ul>
+          <li>GPA 3.73 / 4.00 (cum laude).</li>
+          <li>
+            Final project: Smart Camera Lobster — real-time lobster monitoring and
+            counting at the Aruna cultivation area, using YOLOv7 and StrongSORT.
+          </li>
+          <li>
+            Coursework: Python, C, IoT, data analysis, machine learning, and
+            computer networking with Cisco Packet Tracer.
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <section>
+      <h2>Certifications and Training</h2>
+      <div class="item avoid-break">
+        <p class="line">
+          <span class="role">Bangkit Academy</span> (Google, Tokopedia, Gojek,
+          Traveloka) — Machine Learning path | Feb 2022 – Jul 2022
+        </p>
+        <ul>
+          <li>
+            Completed the machine learning path and earned the TensorFlow
+            Developer Certificate.
+          </li>
+          <li>
+            Built an Android application that classifies Indonesian woven fabric
+            images using TensorFlow.
+          </li>
+        </ul>
+      </div>
+      <div class="item avoid-break">
+        <p class="line">
+          <span class="role">Pijar Camp</span> by Telkom Indonesia — Fullstack Web
+          and Golang Developer | Mar 2024 – Jul 2024
+        </p>
+        <ul>
+          <li>
+            Completed a fullstack curriculum covering JavaScript, Go, React,
+            Next.js, PostgreSQL, Tailwind CSS, Redux, and Agile Scrum.
+          </li>
+          <li>
+            Delivered two individual portfolio projects and one team e-commerce
+            project, owning the front end and the shopping-cart API.
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <section>
+      <h2>Languages</h2>
+      <p>
+        English — professional working proficiency, TOEFL ITP 557 (B2). Indonesian
+        — native.
+      </p>
+    </section>
+  </body>
+</html>

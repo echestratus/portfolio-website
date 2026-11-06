@@ -11,6 +11,8 @@ Every published sentence was checked against at least one of:
 3. Deployment documentation in the repository.
 4. A live URL requested during the audit.
 5. The portfolio PDF (`Farhan_Nur_Hakim_Portfolio_Summary.pdf`).
+6. The author's CV (`CV_ENG_Farhan-Nur-Hakim.pdf`) for employment, education, and contact facts.
+7. The author's written brief for project-to-employer mapping and the on-premise infrastructure engagement, both labelled as author-supplied.
 
 Where a claim could only be supported by the PDF, the project page says so in its evidence note. Where support was missing, the claim was removed.
 
@@ -21,13 +23,15 @@ Where a claim could only be supported by the PDF, the project page says so in it
 - **Verified:** monorepo layout (`apps/api`, `apps/web`, `apps/admin`, `packages/shared`); NestJS 11, Prisma 6, PostgreSQL, Redis/BullMQ, Meilisearch; public repository; live site.
 - **Verified features:** CV import and parsing, matching, ATS pipeline, Telegram integration, PWA, employer verification, admin moderation. Commit subjects and route trees support each.
 - **Contribution:** 170 commits, the largest single author count.
+- **Refreshed:** six screenshots captured from the staging build in November 2026 (252 published vacancies), replacing the older PDF visuals.
 - **Not claimed:** sole authorship, customer numbers, revenue, production SLAs.
 
 ### Hadith Hotel Management System
 
 - **Verified:** Next.js 16, PostgreSQL, Drizzle, MinIO, Exely integration, role-based permissions, audit log, printing modules.
 - **Verified contribution:** 214 commits covering purchasing, POS, assets, warehouse, QA harness, and failover.
-- **Not claimed:** live operational screenshots or client testimonials. The system is internal.
+- **Refreshed:** six operational screenshots captured from the staging deployment: rooms, housekeeping, reservations, warehouse, purchasing, assets. Guest identities and monetary amounts are blurred.
+- **Not claimed:** that the screens are publicly reachable, or any revenue figure. The repository stays private and a walkthrough is offered instead.
 
 ### 7Oz Espresso
 
@@ -45,6 +49,7 @@ Where a claim could only be supported by the PDF, the project page says so in it
 
 - **Verified:** Next.js full-stack app, 26-table schema, stock ledger, serial/lot lifecycles, stocktakes, barcode scanning, PWA, S3 storage.
 - **Verified contribution:** stock and master data, serial/lot, product 360, object storage, governance, UI refresh.
+- **Refreshed:** three screenshots from the production deployment (scan workstation, barcode labels, sign-in). The live instance holds a small data set, and the captions say so rather than implying a busy production system.
 - **Not claimed:** that the entire system was built by Farhan; 12 commits belong to another author.
 
 ### EGI Resources Holding
@@ -64,6 +69,19 @@ Where a claim could only be supported by the PDF, the project page says so in it
 - **Verified:** Next.js 15, next-intl, single localized page, live site.
 - **Verified contribution:** 9 of 10 commits.
 - **Not claimed:** business performance or tenant revenue.
+
+### Hotel Kampoeng Indonesia
+
+- **Verified:** live at `hotel-kampoengindonesia.com`; Next.js with localized routes, room catalogue, gallery, news, reviews, and an embedded Exely booking engine; four live captures.
+- **Attribution:** the repository is private and its Git history contains no commits by the author. The project is published on the author's explicit confirmation of his role, and the evidence note on the page says so.
+- **Not claimed:** sole authorship, booking volumes, or revenue.
+
+### Hadith Hotel on-premise infrastructure
+
+- **Basis:** the author's written account of the engagement, including the architecture, the rules applied, and the test results.
+- **Verified in the account:** key-only SSH on Linux and Windows Server, a restricted jump host limited to the administrative port, Kerio Control forwarding and VPN rules with a non-administrative VPN identity, Remote Desktop over SSH tunnel and over VPN, Nginx reverse proxy with Let's Encrypt automatic renewal, and the restart of the PostgreSQL, MinIO, and application containers with a public health response reporting database and storage ready.
+- **Withheld:** every address, hostname, VPN range, account name, path, and credential.
+- **Not claimed:** that the description is a current audit. The site states it reflects the configuration and test results recorded during the engagement.
 
 ### EGI Optics
 
@@ -102,9 +120,33 @@ Where a claim could only be supported by the PDF, the project page says so in it
 
 - Email `farhanz.nh.13@gmail.com` — verified from the Git author configuration in the inspected repositories.
 - GitHub `https://github.com/echestratus` — verified public profile; also the author identity in the repositories.
-- LinkedIn — not verified in any source, so it is not shown.
-- Location "Indonesia" — from the author's context; no street address or phone number is published.
+- LinkedIn `https://www.linkedin.com/in/farhan-nur-hakim/` — from the author's CV; profile resolves (HTTP 200).
+- Phone `+62 821-1915-1861` and location "Kota Tasikmalaya, West Java" — from the author's CV. The phone number appears on the resume and portfolio documents, not in the site body.
+- Nickname "Hakim" — supplied by the author; used in the profile card, the about facts, and the portfolio cover.
 - No other social profiles are linked.
+
+## Employer mapping
+
+Company attribution for each project comes from the author's brief and is stored as `organization` on every project entry. Employment dates and role titles come from the CV.
+
+| Employer | Projects and sites |
+|---|---|
+| PT EGI Resources | Holding site, Job Talentio, Cari Kerja, Hadith Hotel HMS, 7Oz Espresso, Saji Nusantara, Humble 8, Hotel Kampoeng Indonesia |
+| PT EGI Resources — EGI Optik Indonesia (defence subholding) | EGI Optics, EGI Optik Inventory System |
+| PT AGAT Netcentric | Combat management system work (skills and experience only) |
+| Nextgen Innotech Solutions | Procurement work (experience only) |
+| Aruna Indonesia | Smart Camera Lobster |
+| Freelance | Dev Battalion (VILERT), Drite Attire |
+| Bootcamp and university | HerbCam, TenunSantara, Peworld, Blanja, Mama Recipe |
+
+The CV states the EGI Resources role as November 2024 – February 2026; the author confirmed the role is ongoing, so the site and both documents use "Nov 2024 – Present". The CV does not include dates for the group-wide infrastructure engagement, so that work is dated by year only.
+
+## Documents
+
+- `documents/resume.html` → `public/farhan-nur-hakim-resume.pdf`: single column, no tables, no text boxes, no images, standard sans-serif, selectable text. Verified by extracting the PDF text layer.
+- `documents/portfolio.html` → `public/farhan-nur-hakim-portfolio.pdf`: nine A4 pages, images and text, also with a selectable text layer.
+- Both files are rebuilt by `npm run build:documents`; the site, the resume, and the deck share the same project list, employer mapping, and contact details.
+- The digital infrastructure summary is described without addresses, hostnames, or credentials in all three places.
 
 ## Bundle content checks
 

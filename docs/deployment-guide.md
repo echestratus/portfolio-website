@@ -6,8 +6,8 @@ This project is configured for **static export**. Cloudflare Pages serves the ge
 
 - **Static assets only.** The free plan serves static requests and bandwidth without a request cap.
 - **No Functions.** The site never calls a Pages Function, so the daily Worker request quota is untouched.
-- **Files:** 183 files (limit is 20,000 per deployment).
-- **Largest file:** the PDF at 14.7 MB (limit is 25 MiB per file).
+- **Files:** 203 files (limit is 20,000 per deployment).
+- **Largest file:** the portfolio PDF at 4.2 MB (limit is 25 MiB per file).
 - **No server-side runtime**, so there is nothing to cold-start or bill.
 
 Cloudflare's published limits can change. Check the current [Pages limits](https://developers.cloudflare.com/pages/platform/limits/) before relying on exact numbers; the architecture here stays well inside them.
@@ -34,6 +34,7 @@ out/
   projects/job-talentio/index.html
   404.html
   _headers
+  farhan-nur-hakim-resume.pdf
   farhan-nur-hakim-portfolio.pdf
   robots.txt
   sitemap.xml
@@ -128,8 +129,10 @@ HTTPS is provisioned automatically and is included in the free plan.
 
 - [ ] `https://<domain>/` returns 200 and the dark/light toggle persists after reload.
 - [ ] `/projects/` search, category chips, and the technology filter work.
-- [ ] All 17 `/projects/<slug>/` pages load and have a single `h1`.
+- [ ] All 18 `/projects/<slug>/` pages load and have a single `h1`.
+- [ ] The resume PDF downloads from the header, hero, and contact section.
 - [ ] The portfolio PDF downloads from the header, hero, and contact section.
+- [ ] Both PDFs open with a selectable text layer (resume must remain ATS-parseable).
 - [ ] `/robots.txt` and `/sitemap.xml` return 200 and list the final domain.
 - [ ] `og.png` resolves and social previews render.
 - [ ] No mixed-content or console errors on mobile.
@@ -155,6 +158,7 @@ The export was tested with `wrangler pages dev out` (Wrangler 4.158.0) before de
 | `GET /projects` | 308 → `/projects/` |
 | `GET /nope/` | 404 with the custom `404.html` |
 | `GET /sitemap.xml`, `/robots.txt` | 200 |
+| `GET /farhan-nur-hakim-resume.pdf` | 200, `application/pdf`, inline disposition |
 | `GET /farhan-nur-hakim-portfolio.pdf` | 200, `application/pdf`, inline disposition |
 | `_headers` | 5 valid rules parsed and applied |
 | `/_next/static/*` | `Cache-Control: public, max-age=31536000, immutable` |
