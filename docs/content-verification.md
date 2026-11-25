@@ -41,9 +41,10 @@ Where a claim could only be supported by the PDF, the project page says so in it
 
 ### Cari Kerja
 
-- **Verified:** Vue 3 frontend, React admin, Express API, PostgreSQL, Elasticsearch, Redis, Socket.IO; public repositories; multiple contributors.
-- **Verified contribution:** health checks, filtering, remap scripts, CI/CD, nginx caching, apply-job flow, admin internationalisation.
-- **Not claimed:** production deployment. Staging URLs exist in docs but were not linked because they were not HTTP-verified in this audit.
+- **Reverified 25 November 2026:** the [Indonesian homepage](https://cari-kerja.co.id/id), public job search, and employer landing page returned HTTP 200. All four screenshots were captured from these pages without signing in. The English, Russian, and Uzbek homepages also loaded in their respective languages.
+- **Source evidence:** the current private monorepo's production-branch manifests, routes, and release configuration establish the Next.js 15 / React 19 apps, NestJS 11 API, PostgreSQL / Prisma, Meilisearch, Redis, BullMQ, and Socket.IO. The source also supports CV tools, applicant tracking, matching, and AI-assisted screening.
+- **Verified contribution:** author-filtered production history supports hosting separation, release verification, mobile navigation and search filters, keyboard accessibility, and localized PWA entry points. Screening is documented as a team feature.
+- **Project history:** the current Cari Kerja codebase was imported from Job Talentio and is maintained and deployed independently. Links and screenshots from the earlier Vue / Express implementation were retired from the case study.
 
 ### EGI Optik Inventory System
 

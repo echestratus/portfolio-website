@@ -37,7 +37,8 @@ The PDF's project names were preserved. The website expands the descriptions wit
 | `hotel-kampoeng-indonesia` | Hotel marketing + booking site | Next.js 14, React 18, Tailwind 3, Exely | Live at hotel-kampoengindonesia.com | **No commits attributable to Farhan**; inclusion confirmed by the author |
 | `humble8` | Multilingual venue site | Next.js 15, next-intl, Tailwind 4 | Live | 9 of 10 commits |
 | `inventory-management-system` | Internal inventory system | Next.js 16, PostgreSQL, Drizzle, Better Auth, S3 | Active, partially deployed | 10 of 22 commits |
-| `job-portal` | Umbrella folder with 5 repositories | Vue 3, React, Express, NestJS, PostgreSQL, Elasticsearch | Active staging | 76 + 37 + 41 + 11 + 4 commits |
+| `job-portal` | Historical umbrella folder with 5 repositories | Vue 3, React, Express, NestJS, PostgreSQL, Elasticsearch | Legacy implementation reviewed in the initial audit | 76 + 37 + 41 + 11 + 4 commits |
+| Cari Kerja | Current job portal and ATS monorepo | Next.js 15, NestJS 11, Prisma, PostgreSQL, Redis, Meilisearch | Live as verified on 25 November 2026 | Release automation, responsive UI, and accessibility verified in Git history |
 | `job-talentio` | Job portal + ATS monorepo | Next.js 15, NestJS 11, Prisma, PostgreSQL, Redis, Meilisearch | Live MVP | 170 commits, largest contributor |
 
 Additional folder: `Documents\DriteAttire` contains brand assets and a reference PDF, confirming the client project described in the PDF but no application source.
@@ -45,7 +46,7 @@ Additional folder: `Documents\DriteAttire` contains brand assets and a reference
 ## 4. Related projects and duplicates
 
 - `hotel-kampoeng-indonesia`, `saji-nusantara`, `7oz-cafe-website`, and `humble8` are separate products serving the same hospitality group ecosystem. They are presented separately.
-- `job-talentio` and `job-portal` are **different products** with similar domains. `job-portal` (Cari Kerja) is the earlier multi-repo implementation; `job-talentio` is a separate monorepo. They were not merged.
+- The earlier `job-portal` work used a multi-repository implementation. The current Cari Kerja monorepo was imported from Job Talentio and is maintained and deployed independently. Both live products have their own case studies.
 - `dev-battalion` contains the VILERT dashboard prototype plus specification documents. The PDF's VILERT page corresponds to this work.
 - `inventory-management-system` and `hadith-hotel-hms` both contain inventory concepts but serve different organisations and have separate schemas.
 
@@ -67,6 +68,7 @@ Verified live URLs at audit time:
 - https://humble8.com — 200
 - https://saji-nusantara.com — 200
 - https://jobtalent.io — 200
+- https://cari-kerja.co.id/id — 200 on 25 November 2026
 - https://hotel-management-system.egiresources.com — 200 (sign-in)
 - https://inventory.egi-optics.com — 200 (sign-in)
 
@@ -75,17 +77,14 @@ Verified public repositories:
 - https://github.com/echestratus/7oz-cafe-website
 - https://github.com/echestratus/egi-optics
 - https://github.com/EGI-HOLDING/job-talentio
-- https://github.com/Dew-dev/cari-kerja-frontend
-- https://github.com/Dew-dev/cari-kerja-backend
-- https://github.com/echestratus/super-admin-cari-kerja
 
-Private repositories (no public link rendered): `saji-nusantara`, `EGI-Resources-Holding`, `hadith-hotel-hms`, `humble8`, `inventory-management-system`, `hotel-kampoeng-indonesia`.
+Private repositories (no public link rendered): `saji-nusantara`, `EGI-Resources-Holding`, `hadith-hotel-hms`, `humble8`, `inventory-management-system`, `hotel-kampoeng-indonesia`, and the current Cari Kerja monorepo.
 
 ## 7. Recommended featured projects
 
 1. **Job Talentio** — largest personal commit count, live MVP, public repository, clear technical depth.
 2. **Hadith Hotel Management System** — deepest operational system, 214 commits, verified modules.
 3. **7Oz Espresso** — full monorepo with a Go backend, live public site and public repository.
-4. **Cari Kerja** — large multi-surface product with genuine staging screenshots and multiple public repositories.
+4. **Cari Kerja** — live Indonesian job portal and ATS with production screenshots and verified contributions to delivery and accessibility.
 
 These four are featured on the homepage. All other verified projects remain in the catalog.

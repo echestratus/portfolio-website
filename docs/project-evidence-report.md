@@ -16,7 +16,7 @@ The website never prints these numbers. It states the evidence in plain language
 |---|---|---|---|---|---|
 | Job Talentio | 1 | https://staging.jobtalent.io (staging is the active domain) | Yes | 6 captures from the staging build | 252 published vacancies at capture time |
 | 7Oz Espresso | 1 | https://7oz-espresso.com | Yes | Live homepage capture | Staff dashboard is private |
-| Cari Kerja | 2 | Staging only (not linked) | Yes, 3 repos | 4 captures from the local staging build | Production URL not confirmed |
+| Cari Kerja | 1 | https://cari-kerja.co.id/id | No | 4 public production captures | HTTP 200 verified 25 November 2026. Technical details and individual contributions checked against the private monorepo. |
 | Hadith Hotel HMS | 1 | Internal production + staging | No | 6 captures from staging, PII and amounts masked | Repository private; walkthrough on request |
 | EGI Optik IMS | 2 | Internal production | No | 3 captures from production | Limited live data set; repository private |
 | EGI Resources Holding | 1 | https://egiresources.com | No | Live homepage capture | Private repository |
@@ -61,7 +61,7 @@ The Hadith Hotel infrastructure work is published as a section of the site and a
 - **EGI Optik IMS** (`egi-ims/`) — three captures from the production deployment using a temporary admin account that was created for the capture and deleted immediately afterwards: scan workstation, barcode labels, and sign-in.
 - **Portfolio PDF images** (`drite-attire`, `peworld`, `blanja`, `mama-recipe`, `herbcam`, `tenunsantara`, `lobster-monitoring`, `vilert`) were extracted from `Farhan_Nur_Hakim_Portfolio_Summary.pdf`, image by image, then converted to WebP. Their captions state that they come from the portfolio or specification document.
 - **Wireframes were rejected:** `dev-battalion/Spesifikasi Dashboard (1).docx` contains 16 embedded images, but they are placeholder wireframes (grey boxes, empty states) rather than runtime captures, so none were used.
-- **Cari Kerja captures** come from `job-portal/cari-kerja-frontend/.tmp-shots/`, which contains real staging-build screenshots.
+- **Cari Kerja** (`cari-kerja/`) — four public production captures from 25 November 2026: candidate homepage at desktop and mobile widths, job search and filters, and the employer landing page.
 - No image was generated, mocked up, or edited to hide missing functionality. No stock photography is presented as a product screenshot.
 - All images were resized to a maximum of 1800 px wide and converted to WebP (quality 82).
 
@@ -84,7 +84,7 @@ Screenshots of client systems were taken on staging or with a purpose-built read
 | "Built VILERT's RBAC, CSV export, and WhatsApp alerts" | The specification describes all three. Alerting **is** implemented (Twilio WhatsApp, Gmail, Telegram); CSV export and the three-role model are not. The page states exactly which parts exist. |
 | "Developed Hotel Kampoeng Indonesia" | No attributable Git evidence. Project excluded. |
 | "Built EGI Optics" | Only three theme/content commits. Page describes a theme-and-content contribution. |
-| "Sole developer of Cari Kerja" | Multiple contributors across three repositories. Page says "fullstack contributor". |
+| "Sole developer of Cari Kerja" | The current private monorepo has multiple contributors. The case study names Farhan's verified deployment, responsive UI, and accessibility work. |
 | "Led Smart Camera Lobster" | Team final project; individual contribution not documented. Page says "team contributor". |
 | "Deployed to production" for internal systems | Sign-in pages are public but the systems are internal. Pages say "internal / restricted" and omit the URL. |
 | Numerical skill percentages | No defensible basis. Not used. |
