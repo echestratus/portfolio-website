@@ -40,7 +40,11 @@ No source file inside the original project directories was modified, created, or
 ## Related original projects outside the list
 
 - `C:\Users\Hakim\Documents\DriteAttire` — asset and reference folder for the Drite Attire project (no source repository). Used only to confirm the project's existence.
-- `C:\Users\Hakim\Documents\Freelance\job-portal` — contains five nested repositories. Screenshots used in the portfolio were captured previously by the project owners and found in `cari-kerja-frontend/.tmp-shots`.
+- `C:\Users\Hakim\Documents\Freelance\job-portal` — contains five nested repositories. The initial audit used staging screenshots from the older implementation.
+
+## Cari Kerja follow-up
+
+On 25 November 2026, the current Cari Kerja monorepo was inspected read-only. The private remote's production branch matched the production ref available locally. The public site was verified independently and provided the replacement screenshots.
 
 ## Safety notes
 

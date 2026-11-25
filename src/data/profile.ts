@@ -271,8 +271,8 @@ export const projectWork = [
     title: "Cari Kerja",
     organization: "PT EGI Resources — IT project",
     description:
-      "Multi-role job portal with a candidate/recruiter app, super-admin console, and Express API. Search, CV parsing, matching, and staging CI/CD.",
-    technologies: ["Vue 3", "Express", "Elasticsearch", "Redis"],
+      "Live Indonesian job portal with job search, CV tools, and applicant tracking. Contributed to release automation, responsive layouts, and accessibility.",
+    technologies: ["Next.js", "NestJS", "PostgreSQL", "Meilisearch"],
     href: "/projects/cari-kerja/",
   },
   {
